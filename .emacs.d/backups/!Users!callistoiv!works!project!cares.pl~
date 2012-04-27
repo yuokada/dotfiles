@@ -1,0 +1,9 @@
+#!/usr/bin/env perl5.10
+
+use strict;
+use warnings
+use Smart::Comments;
+
+
+print 'hello world!';
+
