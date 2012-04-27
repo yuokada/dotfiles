@@ -3,9 +3,7 @@ name = yuokada
 email = callistoiv+git@gmail.com
 [color]
     ui = auto
-[github]
- user = yuokada
- token = 0b1415c5b9763f096939a30ae708f171
+
 [core]
  editor = vim
 
