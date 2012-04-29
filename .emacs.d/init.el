@@ -175,3 +175,6 @@
   (ac-config-default)
   (setq ac-auto-start 3)
 )
+
+;;C-m にnew-line-and-indent を割り当て
+(global-set-key (kbd "C-m") 'newline-and-indent)
