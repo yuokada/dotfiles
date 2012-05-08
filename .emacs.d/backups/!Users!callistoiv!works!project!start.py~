@@ -10,4 +10,4 @@ print res
 class Hoge(object):
     def __init__(self):
         super(Hoge, self).__init__()
-
+    

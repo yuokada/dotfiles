@@ -130,8 +130,15 @@ Bundle 'quickrun'
 "2012/02/16
 Bundle 'thinca/vim-ref'
 Bundle 'Shougo/unite.vim'
+"2012/05/04
+Bundle 'taglist-plus'
+Bundle 'taglist.vim'
 
 filetype plugin indent on
 """ Vundle の設定 終わり """
+
+let Tlist_Show_One_File = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Exit_OnlyWindow = 1
 
 set guifont=Ricty:h14

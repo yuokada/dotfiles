@@ -8877,7 +8877,7 @@ See also `anything-create--actions'.")
     (persistent-action . anything-c-persistent-xfont-action)
     (persistent-help . "Switch to this font temporarily")))
 
-;;; 𝕌𝕔𝕤 𝕊��������𝕓𝕠𝕝 𝕔𝕠𝕞�＄���𝕖�ヰ���𝕠𝕟
+;;; 𝕌𝕔𝕤 𝕊𝕪𝕞𝕓𝕠𝕝 𝕔𝕠𝕞𝕡𝕝𝕖𝕥𝕚𝕠𝕟
 ;;
 ;;
 (defvar anything-c-ucs-max-len 0)

@@ -133,7 +133,8 @@
 
 ;; python の設定
 ;; (add-hook 'python-mode-hook '(lambda () (font-lock-mode 1)))
-;; (autoload 'python-mode "python-mode"
+(when (require 'python-mode nil t)
+  (autoload 'python-mode "python-mode"))
 ;; "Major mode for editing Python programs" t)
 ;; (setq auto-mode-alist
 ;;(cons (cons "\\.py$" 'python-mode) auto-mode-alist))
@@ -175,6 +176,25 @@
   (ac-config-default)
   (setq ac-auto-start 3)
 )
+
+
+;;recentf.el
+(when (require 'recentf-ext nil t)
+  ;; 最近使ったファイルに加えないファイルをせいk表現で指定する
+  (setq recentf-exclude '("/TAGS$" "/var/tmp/" "/tmp/") ))
+
+;; tempfbuf.el
+(when (require 'tempbuf nil t)
+  (add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
+  (add-hook 'dired-mode-hook 'turn-on-tempbuf-mode))
+	       
+;; wdired.el
+(when (require 'wdired nil t)
+  (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+  (global-set-key "\C-x\C-d" 'dired))
+;; undo-tree
+(when (require 'undo-tree nil t)
+  (global-undo-tree-mode))
 
 ;;C-m にnew-line-and-indent を割り当て
 (global-set-key (kbd "C-m") 'newline-and-indent)
