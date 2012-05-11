@@ -110,7 +110,7 @@
 ;; オートセーブファイル作成までの秒間隔
 (setq auto-save-timeout 15)
 ;; オートセーブファイル作成までのタイプ間隔
-(setq auto-save-interval 120)
+(setq auto-save-interval 256)
 
 ;; P213 view-mode
 (setq view-read-only t)
@@ -135,6 +135,7 @@
 ;; (add-hook 'python-mode-hook '(lambda () (font-lock-mode 1)))
 (when (require 'python-mode nil t)
   (autoload 'python-mode "python-mode"))
+
 ;; "Major mode for editing Python programs" t)
 ;; (setq auto-mode-alist
 ;;(cons (cons "\\.py$" 'python-mode) auto-mode-alist))
@@ -154,7 +155,7 @@
   anything-candidate-number-limit 100
   anything-quick-update t
   anything-enable-shortcuts 'alphabet)
-  (when (require 'anything-config nil t) 
+  (when (require 'anything-config nil t)
     (setq anything-su-or-sudo "sudo"))
   (when (require 'anything-complete nil t)
     ;; lispシンボルの補完候補の再検索時間
@@ -187,7 +188,7 @@
 (when (require 'tempbuf nil t)
   (add-hook 'find-file-hooks 'turn-on-tempbuf-mode)
   (add-hook 'dired-mode-hook 'turn-on-tempbuf-mode))
-	       
+
 ;; wdired.el
 (when (require 'wdired nil t)
   (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
