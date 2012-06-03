@@ -82,7 +82,7 @@
 
 ;; 矩形選択を簡単に
 (cua-mode t)
-;;(setq cua-enable-cua-keys nil) ;; 変なキーバインド禁止
+(setq cua-enable-cua-keys nil) ;; 変なキーバインド禁止
 
 ;; 入力されるキーシーケンスを置き換える
 ;; ?\C-? はDELのキーシーケンス
@@ -199,3 +199,24 @@
 
 ;;C-m にnew-line-and-indent を割り当て
 (global-set-key (kbd "C-m") 'newline-and-indent)
+
+;; git 周りの設定
+(when (executable-find "git")
+  (require 'egg nil t))
+
+;; Anything-c-moccurの設定
+(when (require 'color-moccur nil t)
+  )
+(when (require 'anything-c-moccur nil t)
+  (setq anything-c-moccur-anything-idle-delay 0.2
+	      ;`anything-idle-delay'
+	      anything-c-moccur-higligt-info-line-flag t
+	      ; `anything-c-moccur-dmoccur'などのコマンドでバッファの情報をハイライトする
+	      anything-c-moccur-enable-auto-look-flag t
+	      ; 現在選択中の候補の位置を他のwindowに表示する
+	      anything-c-moccur-enable-initial-pattern t)
+	      ; `anything-c-moccur-occur-by-moccur'の起動時にポイントの位置の単語を初期パターンにする
+  (global-set-key (kbd "C-M-o") 'anything-c-moccur-by-moccur))
+
+;; wgrep
+(when (require 'wgrep nil t))
