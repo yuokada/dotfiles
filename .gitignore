@@ -1,4 +1,4 @@
-.vim/bundle/
+.vim/bundle/*
 .emacs.d/backups
 .emacs.d/url
 .emacs.d/auto-save-list
