@@ -86,8 +86,8 @@ setopt auto_param_slash
 ## スペルチェック
 setopt correct
 
-alias emacs='/opt/local/bin/emacs-23.3'
-alias emacs23='/opt/local/bin/emacs-23.3'
+alias emacs='/opt/local/bin/emacs-23.4'
+alias emacs23='/opt/local/bin/emacs-23.4'
 alias emacsclient='/opt/local/bin/emacsclient'
 alias emacs-comp="emacs23 -batch -f byte-compile"
 alias emacs-kill="emacsclient -e '(kill-emacs)'"
