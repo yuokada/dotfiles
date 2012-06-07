@@ -123,9 +123,13 @@
   ;;(viewer-stay-in-setup)
 ;;  )
 
-;;(when (require 'redo+ nil t)
-;; ;; C-' にredoを割り当てる
-;; (global-set-key (kbd "C-.") 'redo ))
+(when (require 'redo+ nil t)
+;; C-' にredoを割り当てる
+ (global-set-key (kbd "C-.") 'redo )
+ (setq undo-limit 60000)
+ (setq undo-strong-limit 900000)
+ )
+
 
 ;; Original http://Oxcc.net/misc/auto-save/auto-save-buffer.el
 ;;(require 'auto-save-buffers)
@@ -225,3 +229,7 @@
   (undohist-initialize))
 ;; anthy
 ;;(load-library "anthy")
+
+;; (auto-install-batch "sequential-command")
+(when (require 'sequential-command-config) nil t
+  (sequential-command-setup-keys))
