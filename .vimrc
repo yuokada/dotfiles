@@ -144,7 +144,8 @@ let Tlist_Exit_OnlyWindow = 1
 set guifont=Ricty:h14
 
 colorscheme rdark
-colorscheme DarkBlue
-colorscheme molokai
+"colorscheme DarkBlue
+set t_Co=256
+"colorscheme molokai
 let g:molokai_original = 1
 set background=light

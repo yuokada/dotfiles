@@ -2,8 +2,18 @@
 
 use strict;
 use warnings
-use Smart::Comments;
-
+#use Smart::Comments;
 
 print 'hello world!';
+print "emcs wikii\n\n ";
 
+__END__
+|
+    | apple
+    | google
+    | facebook
+    | yahoo
+    |
+
+
+    
