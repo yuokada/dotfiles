@@ -116,7 +116,7 @@ set nocompatible
 let g:vundle_default_git_proto='git'
 filetype off
 
-set rtp+=~/.vim/vundle.git/
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'mattn/gist-vim'
@@ -149,10 +149,6 @@ let Tlist_Exit_OnlyWindow = 1
 set guifont=Ricty:h14
 
 colorscheme rdark
-"colorscheme DarkBlue
 set t_Co=256
-"colorscheme molokai
-let g:molokai_original = 1
 set background=light
 
-"markdown
