@@ -3,6 +3,7 @@ syntax on
 set title
 set showmatch
 set wildmenu
+set laststatus=2
 
 set autoindent
 set cindent
@@ -24,13 +25,16 @@ set number
 set ruler           " show the cursor position all the time
 set scrolloff=3     " keep 3 lines when scrolling
 set shiftwidth=4    " numbers of spaces to (auto)indent
+set shiftround
 set showcmd         " display incomplete commands
 set softtabstop=4
 set tabstop=4       " numbers of spaces of tab character
 set textwidth=80
+set list
 set cursorline
 hi CursorLine term=reverse cterm=reverse
 
+set iskeyword+=:
 " http://archiva.jp/web/tool/vimrc_keymap.html
 inoremap {} {}<LEFT>
 inoremap [] []<LEFT>
@@ -91,8 +95,6 @@ let &directory = &backupdir
 
 au InsertEnter * hi StatusLine guifg=DarkBlue guibg=DarkYellow gui=none ctermfg=Blue ctermbg=Yellow   cterm=none
 au InsertLeave * hi StatusLine guifg=DarkBlue guibg=DarkGray   gui=none ctermfg=Blue ctermbg=DarkGray cterm=none
-
-"sudo  aptitude  search ^vim
 
 """ ref.vim
 "nmap ,ra :<C-u>Ref alc<Space>
