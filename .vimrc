@@ -28,6 +28,8 @@ set showcmd         " display incomplete commands
 set softtabstop=4
 set tabstop=4       " numbers of spaces of tab character
 set textwidth=80
+set cursorline
+hi CursorLine term=reverse cterm=reverse
 
 " http://archiva.jp/web/tool/vimrc_keymap.html
 inoremap {} {}<LEFT>
@@ -109,6 +111,7 @@ augroup END
 
 """ Vundle の設定  """
 set nocompatible
+let g:vundle_default_git_proto='git'
 filetype off
 
 set rtp+=~/.vim/vundle.git/
