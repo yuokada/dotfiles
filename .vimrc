@@ -139,6 +139,15 @@ Bundle 'Shougo/unite.vim'
 Bundle 'taglist-plus'
 Bundle 'taglist.vim'
 
+"2012/09/20
+Bundle 'errormarker.vim'
+Bundle 'phpErrorMarker'
+Bundle 'ZenCoding.vim'
+Bundle 'Zen-Color-Scheme'
+Bundle 'pep8'
+Bundle 'repeat.vim'
+Bundle 'L9'
+
 filetype plugin indent on
 """ Vundle の設定 終わり """
 

@@ -1,3 +1,8 @@
 [submodule ".vim/vundle.git"]
-	path = .vim/vundle.git
-	url = http://github.com/gmarik/vundle.git
+ path = .vim/vundle.git
+ url  = http://github.com/gmarik/vundle.git
+
+[submodule ".vim/bundle/Align/"]
+path = .vim/bundle.git
+url  = http://github.com/gmarik/vundle.git
+
