@@ -147,6 +147,8 @@ Bundle 'Zen-Color-Scheme'
 Bundle 'pep8'
 Bundle 'repeat.vim'
 Bundle 'L9'
+Bundle 'project.tar.gz'
+"Bundle 'davidhalter/jedi-vim'
 
 filetype plugin indent on
 """ Vundle の設定 終わり """
@@ -161,3 +163,6 @@ colorscheme rdark
 set t_Co=256
 set background=light
 
+"let g:jedi#auto_initialization = 1
+"let g:jedi#rename_command= "<leader>R"
+"let g:jedi#popup_on_dot=1

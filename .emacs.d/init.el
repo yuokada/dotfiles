@@ -10,6 +10,8 @@
 ;;buffer-file-coding-system
 (setq buffer-file-coding-system 'utf-8)
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+;;(add-to-list 'load-path "~/.emacs.d/packages/")
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/packages"))
 
 ;; 行番号を常に表示する
 (global-linum-mode t)
@@ -93,6 +95,7 @@
     ;;(color-theme-initialize)
     (color-theme-hober)
     )
+;;(require 'color-theme-solarized) 
 
 ;; オートセーブファイル・バックアップファイルの設定
 ;; バックアップファイル作成場所をシステムのTempディレクトリに変更する
@@ -265,3 +268,9 @@
 
 
 (put 'set-goal-column 'disabled nil)
+
+;;auto-completeの設定のあとに書く
+(when (require 'ac-python) nil t)
+
+;; この設定しないとpython-modeで自動的にauto-completeが起動しない
+(add-to-list 'ac-modes 'python-2-mode)
