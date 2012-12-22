@@ -1,3 +1,4 @@
+;; coding:utf-8
 ;;C:\meadow\.emacs.d\init.el or $HOME/.emacs
 ;;
 ;; 日本語環境の設定
