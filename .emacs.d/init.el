@@ -49,11 +49,6 @@
 ;;; yes と入力するのは面倒なのでyでokにする
 ;;(defalias 'yes-or-no-p 'y-or-no-p)
 
-;; M-x install-elisp-from-emacswiki auto-async-byte-compile.el
-(require 'auto-async-byte-compile)
-(setq auto-async-byte-compile-exclude-files-regexp "/tmp/")
-(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
-
 ;; auto-install
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install"))
 (require 'auto-install)
@@ -64,6 +59,12 @@
 (auto-install-compatibility-setup)
 ;; ediff関連のバッファを1つのフレームにまとめる
 ;;(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+
+;; M-x install-elisp-from-emacswiki auto-async-byte-compile.el
+(require 'auto-async-byte-compile)
+(setq auto-async-byte-compile-exclude-files-regexp "/tmp/")
+(add-hook 'emacs-lisp-mode-hook 'enable-auto-async-byte-compile-mode)
+
 
 ;; package.elの設定
 (when
@@ -77,10 +78,6 @@
 (require 'recentf)
 (setq recentf-auto-cleanup 'never)
 (recentf-mode 1)
-
-;;(auto-insert-mode)
-;;(setq auto-insert-directory "~/.emacs.d/auto-insert/" )
-(define-auto-insert "\\.py" "template.py" )
 
 ;; 矩形選択を簡単に
 (cua-mode t)
@@ -112,9 +109,9 @@
  `(("." ,(expand-file-name "~/.emacs.d/backups/") t)))
 
 ;; オートセーブファイル作成までの秒間隔
-(setq auto-save-timeout 15)
+(setq auto-save-timeout 120)
 ;; オートセーブファイル作成までのタイプ間隔
-(setq auto-save-interval 256)
+(setq auto-save-interval 1024)
 
 ;; P213 view-mode
 (setq view-read-only t)
@@ -272,6 +269,5 @@
 
 ;;auto-completeの設定のあとに書く
 (when (require 'ac-python) nil t)
-
 ;; この設定しないとpython-modeで自動的にauto-completeが起動しない
 (add-to-list 'ac-modes 'python-2-mode)
