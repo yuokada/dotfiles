@@ -10,8 +10,8 @@
 ;;buffer-file-coding-system
 (setq buffer-file-coding-system 'utf-8)
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
-;;(add-to-list 'load-path "~/.emacs.d/packages/")
-;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/packages"))
+;;(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/color-theme-6.6.0/"))
 
 ;; 行番号を常に表示する
 (global-linum-mode t)
@@ -94,7 +94,8 @@
 (when (require 'color-theme nil t)
     ;;(color-theme-initialize)
     (color-theme-hober)
-    )
+)
+
 ;;(require 'color-theme-solarized) 
 
 ;; オートセーブファイル・バックアップファイルの設定
