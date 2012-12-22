@@ -11,7 +11,7 @@
 (setq buffer-file-coding-system 'utf-8)
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 ;;(add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/color-theme-6.6.0/"))
+
 
 ;; 行番号を常に表示する
 (global-linum-mode t)
@@ -88,9 +88,14 @@
 (keyboard-translate ?\C-h ?\C-?)
 
 ;; color-themeの設定
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/packages/color-theme-6.6.0/"))
 (when (require 'color-theme nil t)
-    ;;(color-theme-initialize)
-    (color-theme-hober)
+   (color-theme-initialize)
+   (color-theme-hober)
+   (require 'color-theme-tango) 
+   ;;(color-theme-tango)
+   (require 'color-theme-solarized)
+   ;;(color-theme-solarized-light)
 )
 
 ;;(require 'color-theme-solarized) 
@@ -271,3 +276,4 @@
 (when (require 'ac-python) nil t)
 ;; この設定しないとpython-modeで自動的にauto-completeが起動しない
 (add-to-list 'ac-modes 'python-2-mode)
+;;(require 'color-theme-solarized)

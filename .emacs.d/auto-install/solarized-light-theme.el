@@ -2,4 +2,4 @@
          (locate-file "solarized-definitions.el" custom-theme-load-path
                       '("c" "")))
 
-(create-solarized-theme dark)
+(create-solarized-theme light)
