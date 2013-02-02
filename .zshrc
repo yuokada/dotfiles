@@ -91,9 +91,11 @@ alias emacs23='/opt/local/bin/emacs-23.4'
 alias emacsclient='/opt/local/bin/emacsclient'
 alias emacs-comp="emacs23 -batch -f byte-compile"
 alias emacs-kill="emacsclient -e '(kill-emacs)'"
-export PATH=$PATH:/opt/local/bin/
+alias ctags="/usr/local/bin/ctags"
+export PATH=$PATH:/opt/local/bin/:/usr/local/share/npm/bin/
 export GISTY_DIR=/Users/callistoiv/works/git
 
 
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source /Users/callistoiv/.pythonbrew/etc/bashrc
 
+source `which virtualenvwrapper.sh`
