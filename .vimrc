@@ -150,6 +150,8 @@ Bundle 'L9'
 Bundle 'project.tar.gz'
 "Bundle 'davidhalter/jedi-vim'
 
+"2012/02/02
+Bundle 'Solarized'
 filetype plugin indent on
 """ Vundle の設定 終わり """
 
