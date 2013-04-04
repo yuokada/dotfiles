@@ -144,7 +144,6 @@ Bundle 'errormarker.vim'
 Bundle 'phpErrorMarker'
 Bundle 'ZenCoding.vim'
 Bundle 'Zen-Color-Scheme'
-Bundle 'pep8'
 Bundle 'repeat.vim'
 Bundle 'L9'
 Bundle 'project.tar.gz'
@@ -152,6 +151,11 @@ Bundle 'project.tar.gz'
 
 "2012/02/02
 Bundle 'Solarized'
+Bundle 'rest.vim'
+
+
+" last nsert
+"Bundle 'pep8'
 filetype plugin indent on
 """ Vundle の設定 終わり """
 
