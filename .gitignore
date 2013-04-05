@@ -7,3 +7,7 @@
 .emacs.d/url
 .emacs.d/auto-save-list
 .emacs.d/undohist
+emacs23/.emacs.d/ac-comphist.dat
+emacs23/.emacs.d/undohist/
+emacs23/.emacs.d/url/
+
