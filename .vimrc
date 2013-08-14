@@ -112,51 +112,60 @@ augroup rbsyntaxcheck
 augroup END
 
 """ Vundle の設定  """
+"set nocompatible
+"let g:vundle_default_git_proto='git'
+"filetype off
+"
+"set rtp+=~/.vim/bundle/vundle
+"call vundle#rc()
+
 set nocompatible
-let g:vundle_default_git_proto='git'
-filetype off
+filetype plugin indent off
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
 
-Bundle 'mattn/gist-vim'
-Bundle 'tsaleh/vim-align'
-Bundle 'gmarik/vundle'
-Bundle 'Shougo/neocomplcache'
-Bundle 'surround.vim'
-Bundle 'snipMate'
-Bundle 'Conque-Shell'
-Bundle 'SuperTab'
+
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'tsaleh/vim-align'
+NeoBundle 'gmarik/vundle'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'surround.vim'
+NeoBundle 'snipMate'
+NeoBundle 'Conque-Shell'
+NeoBundle 'SuperTab'
 "Bundle 'twitvim'
-Bundle 'AutoComplPop'
-Bundle 'python_fold'
-Bundle 'unite.vim'
-Bundle 'quickrun'
+NeoBundle 'AutoComplPop'
+NeoBundle 'python_fold'
+"NeoBundle 'unite.vim'
+NeoBundle 'quickrun'
 "2012/02/16
-Bundle 'thinca/vim-ref'
-Bundle 'Shougo/unite.vim'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'Shougo/unite.vim'
 "2012/05/04
-Bundle 'taglist-plus'
-Bundle 'taglist.vim'
-
+NeoBundle 'taglist-plus'
+NeoBundle 'taglist.vim'
 "2012/09/20
-Bundle 'errormarker.vim'
-Bundle 'phpErrorMarker'
-Bundle 'ZenCoding.vim'
-Bundle 'Zen-Color-Scheme'
-Bundle 'repeat.vim'
-Bundle 'L9'
-Bundle 'project.tar.gz'
-"Bundle 'davidhalter/jedi-vim'
-
+NeoBundle 'errormarker.vim'
+NeoBundle 'phpErrorMarker'
+NeoBundle 'ZenCoding.vim'
+NeoBundle 'Zen-Color-Scheme'
+NeoBundle 'repeat.vim'
+NeoBundle 'L9'
+NeoBundle 'project.tar.gz'
+"NeoBundle 'davidhalter/jedi-vim'
 "2012/02/02
-Bundle 'Solarized'
-Bundle 'rest.vim'
-Bundle 'Rykka/riv.vim'
+NeoBundle 'Solarized'
+NeoBundle 'rest.vim'
+NeoBundle 'Rykka/riv.vim'
+"2013/08/15
+NeoBundle 'Shougo/neosnippet'
 
 
 " last nsert
-"Bundle 'pep8'
+"NeoBundle 'pep8'
 filetype plugin indent on
 """ Vundle の設定 終わり """
 """ NeoVundle の設定 開始 """
