@@ -86,6 +86,26 @@ setopt auto_param_slash
 ## スペルチェック
 setopt correct
 
+### For Mack
+case ${OSTYPE} in
+    darwin*)
+        #ここにMac向けの設定
+        export PATH=/opt/local/bin:$PATH
+        ;;
+    linux*)
+        #ここにLinux向けの設定
+        ;;
+esac
+
+
+## rbenv
+#
+if [ -e /usr/local/bin/rbenv ]; then;
+    export PATH=~/.rbenv/shims:$PATH
+    #source "`brew --prefix rbenv`/completions/rbenv.zsh"
+fi
+
+
 alias emacs='/opt/local/bin/emacs-23.4'
 alias emacs23='/opt/local/bin/emacs-23.4'
 alias emacsclient='/opt/local/bin/emacsclient'
@@ -99,3 +119,4 @@ export GISTY_DIR=/Users/callistoiv/works/git
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source /Users/callistoiv/.pythonbrew/etc/bashrc
 
 source `which virtualenvwrapper.sh`
+[[ -s /Users/callistoiv/.tmuxinator/scripts/tmuxinator ]] && source /Users/callistoiv/.tmuxinator/scripts/tmuxinator
