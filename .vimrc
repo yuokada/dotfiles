@@ -164,6 +164,7 @@ NeoBundle 'Rykka/riv.vim'
 NeoBundle 'Shougo/neosnippet'
 
 "NeoBundle 'MarcWeber/vim-addon-manager'
+NeoBundle 'h1mesuke/unite-outline'
 
 " last nsert
 "NeoBundle 'pep8'
@@ -259,4 +260,18 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+"スニペットのディレクトリ
+if !exists("g:neosnippet#snippets_directory")
+    let g:neosnippet#snippets_directory=""
+endif
+let g:neosnippet#snippets_directory=$HOME.'/.vim/snippets'
+
+"<TAB>でスニペット補完
+"if g:neocomplcache_enable_at_startup
+"  imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+"endif
+"
+"" スニペットで単語が選択されている場合でも <Tab> で次のプレースホルダへ移動する
+"vmap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : "\<Tab>"
 
