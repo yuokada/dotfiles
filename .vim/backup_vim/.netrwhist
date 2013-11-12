@@ -1,10 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/callistoiv/.emacs.d'
 let g:netrw_dirhist_2='/Users/callistoiv/.emacs.d/auto-insert'
 let g:netrw_dirhist_3='/Users/callistoiv/.emacs.d'
 let g:netrw_dirhist_4='/Users/callistoiv/.emacs.d/auto-insert'
 let g:netrw_dirhist_5='/Users/callistoiv/works/project/dotfiles/.vim/vundle.git'
-let g:netrw_dirhist_6='/Users/callistoiv/works/project/yuokada.github.com/source'
-let g:netrw_dirhist_7='/Users/callistoiv/Dropbox/source/python/jinja2/config'
-let g:netrw_dirhist_8='/Users/callistoiv/go_testing/newmath/gospel/src/myapp/app/controllers'
