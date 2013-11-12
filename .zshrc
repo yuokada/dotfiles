@@ -90,10 +90,22 @@ setopt correct
 case ${OSTYPE} in
     darwin*)
         #ここにMac向けの設定
-        export PATH=/opt/local/bin:$PATH
+        export PATH=$PATH:/opt/local/bin:/usr/local/share/npm/bin/
+        #alias emacs='/opt/local/bin/emacs-23.4'
+        #alias emacs23='/opt/local/bin/emacs-23.4'
+        alias emacs='/usr/local/bin/emacs-24.3'
+        alias emacs23='/usr/local/bin/emacs-24.3'
+        alias emacsclient='/opt/local/bin/emacsclient'
+        alias emacs-comp="emacs23 -batch -f byte-compile"
+        alias emacs-kill="emacsclient -e '(kill-emacs)'"
         ;;
     linux*)
         #ここにLinux向けの設定
+        alias emacs='/usr/local/bin/emacs-23.4'
+        alias emacs23='/usr/local/bin/emacs-23.4'
+        alias emacsclient='/usr/local/bin/emacsclient'
+        alias emacs-comp="emacs23 -batch -f byte-compile"
+        alias emacs-kill="emacsclient -e '(kill-emacs)'"
         ;;
 esac
 
@@ -106,13 +118,7 @@ if [ -e /usr/local/bin/rbenv ]; then;
 fi
 
 
-alias emacs='/opt/local/bin/emacs-23.4'
-alias emacs23='/opt/local/bin/emacs-23.4'
-alias emacsclient='/opt/local/bin/emacsclient'
-alias emacs-comp="emacs23 -batch -f byte-compile"
-alias emacs-kill="emacsclient -e '(kill-emacs)'"
 alias ctags="/usr/local/bin/ctags"
-export PATH=$PATH:/opt/local/bin/:/usr/local/share/npm/bin/
 export GISTY_DIR=/Users/callistoiv/works/git
 
 
