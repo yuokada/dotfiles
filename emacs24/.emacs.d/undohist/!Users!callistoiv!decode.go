@@ -1,0 +1,2 @@
+
+((digest . "fc5e038d38a57032085441e7fe7010b0") (undo-list nil (1 . 11) nil (#("p" 0 1 (fontified t)) . -1) nil (#("a" 0 1 (fontified t)) . -2) nil (#("c" 0 1 (fontified t)) . -3) nil (#("k" 0 1 (fontified t)) . -4) nil (#("a" 0 1 (fontified t)) . -5) nil (#("g" 0 1 (fontified t)) . -6) nil (#("e" 0 1 (fontified t face font-lock-keyword-face)) . -7) nil (#(" " 0 1 (fontified t)) . -8) nil (#("m" 0 1 (fontified t)) . -9) nil (#("a" 0 1 (fontified t)) . -10) nil (#("i" 0 1 (fontified t)) . -11) nil (#("n" 0 1 (fontified t)) . -12) nil (1 . 13) (t 0 0 0 -1000)))
