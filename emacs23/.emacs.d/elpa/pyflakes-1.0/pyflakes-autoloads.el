@@ -3,17 +3,20 @@
 ;;; Code:
 
 
-;;;### (autoloads (pyflakes) "pyflakes" "pyflakes.el" (20376 13047))
-;;; Generated autoloads from pyflakes.el
+;;;### (autoloads (pyflakes) "pyflakes" "../../../../../../../.emacs.d/elpa/pyflakes-1.0/pyflakes.el"
+;;;;;;  "612819c0294d7334258aad3e2f371fad")
+;;; Generated autoloads from ../../../../../../../.emacs.d/elpa/pyflakes-1.0/pyflakes.el
 
 (autoload 'pyflakes "pyflakes" "\
-Not documented
+
 
 \(fn)" t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("pyflakes-pkg.el") (20376 13047 270033))
+;;;### (autoloads nil nil ("../../../../../../../.emacs.d/elpa/pyflakes-1.0/pyflakes-pkg.el"
+;;;;;;  "../../../../../../../.emacs.d/elpa/pyflakes-1.0/pyflakes.el")
+;;;;;;  (21085 33113 551060 0))
 
 ;;;***
 

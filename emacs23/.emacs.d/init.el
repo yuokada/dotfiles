@@ -51,7 +51,8 @@
 ;;(defalias 'yes-or-no-p 'y-or-no-p)
 
 ;; auto-install
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/auto-install"))
+(add-to-list 'load-path "~/.emacs.d/auto-install")
 (require 'auto-install)
 (setq auto-install-directory "~/.emacs.d/auto-install/")
 ;; 起動時にEmacsWikiのページ名を補完候補に加える
@@ -93,13 +94,14 @@
 (when (require 'color-theme nil t)
    (color-theme-initialize)
    (color-theme-hober)
-   (require 'color-theme-tango) 
+   (require 'color-theme-tango)
    ;;(color-theme-tango)
    (require 'color-theme-solarized)
    ;;(color-theme-solarized-light)
+   (color-theme-hober)
 )
 
-;;(require 'color-theme-solarized) 
+;;(require 'color-theme-solarized)
 
 ;; オートセーブファイル・バックアップファイルの設定
 ;; バックアップファイル作成場所をシステムのTempディレクトリに変更する
@@ -130,12 +132,13 @@
   ;;(viewer-stay-in-setup)
 ;;  )
 
-(when (require 'redo+ nil t)
-;; C-' にredoを割り当てる
- (global-set-key (kbd "C-.") 'redo )
- (setq undo-limit 60000)
- (setq undo-strong-limit 900000)
- )
+;; temporary-comment-out
+;;(when (require 'redo+ nil t)
+;;;; C-' にredoを割り当てる
+;; (global-set-key (kbd "C-.") 'redo )
+;; (setq undo-limit 60000)
+;; (setq undo-strong-limit 900000)
+;; )
 
 
 ;; Original http://Oxcc.net/misc/auto-save/auto-save-buffer.el
@@ -278,3 +281,4 @@
 ;; この設定しないとpython-modeで自動的にauto-completeが起動しない
 (add-to-list 'ac-modes 'python-2-mode)
 ;;(require 'color-theme-solarized)
+
