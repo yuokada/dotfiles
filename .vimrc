@@ -229,7 +229,8 @@ let Tlist_Exit_OnlyWindow = 1
 
 set guifont=Ricty:h14
 
-colorscheme rdark
+colorscheme molokai
+"colorscheme rdark
 set t_Co=256
 set background=light
 
