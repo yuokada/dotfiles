@@ -38,5 +38,4 @@ cask install virtualbox
 cask install vagrant
 
 # 不要なファイルを削除
-clean
 cleanup
