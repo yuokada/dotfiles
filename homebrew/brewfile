@@ -1,0 +1,41 @@
+# Homebrewを最新版にアップデート
+update
+
+# Formulaを更新
+upgrade
+
+# Add Repository
+tap homebrew/versions
+tap phinze/homebrew-cask
+tap homebrew/binary
+
+# パッケージのインストール
+install coreutils
+install emacs
+install gist
+install git
+install markdown
+install nkf
+install proctools
+install rmtrash
+install rmtrash
+install tig
+install tmux
+install tree
+install wget
+install zsh
+install openssl
+install readline
+install imagemagick
+install brew-cask
+install packer
+
+# .dmg
+cask install google-chrome
+cask install evernote
+cask install kobito
+cask install virtualbox
+cask install vagrant
+
+# 不要なファイルを削除
+cleanup
