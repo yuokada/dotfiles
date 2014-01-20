@@ -1,0 +1,13 @@
+# Homebrewを最新版にアップデート
+update
+
+# Formulaを更新
+upgrade
+
+# パッケージのインストール
+install zsh
+install git
+install install coreutils
+
+# 不要なファイルを削除
+clean
