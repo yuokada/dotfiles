@@ -39,5 +39,4 @@ cask install vagrant
 
 # 不要なファイルを削除
 clean
-# Remove outdated versions
 cleanup
