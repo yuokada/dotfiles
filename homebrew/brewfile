@@ -10,24 +10,19 @@ tap phinze/homebrew-cask
 tap homebrew/binary
 
 # パッケージのインストール
-install coreutils
-install emacs
-install gist
+install brew-cask
 install git
-install markdown
-install nkf
-install proctools
-install rmtrash
-install rmtrash
 install tig
+install markdown
+install rmtrash
 install tmux
 install tree
 install wget
 install zsh
 install openssl
 install readline
-install imagemagick
-install brew-cask
+install coreutils
+install emacs
 install packer
 
 # .dmg
