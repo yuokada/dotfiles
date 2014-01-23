@@ -1,0 +1,541 @@
+Okada-no-MacBook-Air-2% sudo port -fp uninstall --follow-dependents installed
+--->  Deactivating antlr3 @3.2_0
+--->  Cleaning antlr3
+--->  Uninstalling antlr3 @3.2_0
+--->  Cleaning antlr3
+--->  Deactivating apache-ant @1.9.2_0
+--->  Cleaning apache-ant
+--->  Uninstalling apache-ant @1.9.2_0
+--->  Cleaning apache-ant
+--->  Deactivating boehmgc @7.2d_0
+--->  Cleaning boehmgc
+--->  Uninstalling boehmgc @7.2d_0
+--->  Cleaning boehmgc
+--->  Deactivating fontforge @20120731_1
+--->  Cleaning fontforge
+--->  Uninstalling fontforge @20120731_1
+--->  Cleaning fontforge
+--->  Deactivating freetype @2.5.0_1
+--->  Cleaning freetype
+--->  Uninstalling freetype @2.5.0_1
+--->  Cleaning freetype
+--->  Deactivating zsh @5.0.2_3
+--->  Cleaning zsh
+--->  Uninstalling zsh @5.0.2_3
+--->  Cleaning zsh
+--->  Deactivating pcre @8.33_0
+--->  Cleaning pcre
+--->  Uninstalling pcre @8.33_0
+--->  Cleaning pcre
+--->  Deactivating py27-paramiko @1.11.0_0
+--->  Cleaning py27-paramiko
+--->  Uninstalling py27-paramiko @1.11.0_0
+--->  Cleaning py27-paramiko
+--->  Deactivating py27-crypto @2.6_0
+--->  Cleaning py27-crypto
+--->  Uninstalling py27-crypto @2.6_0
+--->  Cleaning py27-crypto
+--->  Deactivating py27-curl @7.19.0_0
+--->  Cleaning py27-curl
+--->  Uninstalling py27-curl @7.19.0_0
+--->  Cleaning py27-curl
+--->  Deactivating py27-pymacs @0.23_0
+--->  Cleaning py27-pymacs
+--->  Uninstalling py27-pymacs @0.23_0
+--->  Cleaning py27-pymacs
+--->  Deactivating py27-virtualenv @1.6.1_0
+--->  Cleaning py27-virtualenv
+--->  Uninstalling py27-virtualenv @1.6.1_0
+--->  Cleaning py27-virtualenv
+--->  Deactivating py27-distribute @0.6.24_0
+--->  Cleaning py27-distribute
+--->  Uninstalling py27-distribute @0.6.24_0
+--->  Cleaning py27-distribute
+--->  Deactivating py27-gdbm @2.7.3_0
+--->  Cleaning py27-gdbm
+--->  Uninstalling py27-gdbm @2.7.3_0
+--->  Cleaning py27-gdbm
+--->  Deactivating py27-pyrex @0.9.9_0
+--->  Cleaning py27-pyrex
+--->  Uninstalling py27-pyrex @0.9.9_0
+--->  Cleaning py27-pyrex
+--->  Deactivating py27-docutils @0.11_0
+--->  Cleaning py27-docutils
+--->  Uninstalling py27-docutils @0.11_0
+--->  Cleaning py27-docutils
+--->  Deactivating py27-roman @2.0.0_0
+--->  Cleaning py27-roman
+--->  Uninstalling py27-roman @2.0.0_0
+--->  Cleaning py27-roman
+--->  Deactivating giflib @4.2.3_0+x11
+--->  Cleaning giflib
+--->  Uninstalling giflib @4.2.3_0+x11
+--->  Cleaning giflib
+--->  Deactivating xorg-libXi @1.7.2_0
+--->  Cleaning xorg-libXi
+--->  Uninstalling xorg-libXi @1.7.2_0
+--->  Cleaning xorg-libXi
+--->  Deactivating xorg-libXext @1.3.2_0
+--->  Cleaning xorg-libXext
+--->  Uninstalling xorg-libXext @1.3.2_0
+--->  Cleaning xorg-libXext
+--->  Deactivating xorg-libXfixes @5.0.1_0
+--->  Cleaning xorg-libXfixes
+--->  Uninstalling xorg-libXfixes @5.0.1_0
+--->  Cleaning xorg-libXfixes
+--->  Deactivating xorg-libxkbui @1.0.2_0
+--->  Cleaning xorg-libxkbui
+--->  Uninstalling xorg-libxkbui @1.0.2_0
+--->  Cleaning xorg-libxkbui
+--->  Deactivating xorg-libXt @1.1.4_0
+--->  Cleaning xorg-libXt
+--->  Uninstalling xorg-libXt @1.1.4_0
+--->  Cleaning xorg-libXt
+--->  Deactivating xorg-libxkbfile @1.0.8_0
+--->  Cleaning xorg-libxkbfile
+--->  Uninstalling xorg-libxkbfile @1.0.8_0
+--->  Cleaning xorg-libxkbfile
+--->  Deactivating xorg-libX11 @1.6.2_0
+--->  Cleaning xorg-libX11
+--->  Uninstalling xorg-libX11 @1.6.2_0
+--->  Cleaning xorg-libX11
+--->  Deactivating xorg-libxcb @1.9.1_0+python27
+--->  Cleaning xorg-libxcb
+--->  Uninstalling xorg-libxcb @1.9.1_0+python27
+--->  Cleaning xorg-libxcb
+--->  Deactivating xorg-xcb-proto @1.8_0+python27
+--->  Cleaning xorg-xcb-proto
+--->  Uninstalling xorg-xcb-proto @1.8_0+python27
+--->  Cleaning xorg-xcb-proto
+--->  Deactivating python27 @2.7.5_1
+--->  Cleaning python27
+--->  Uninstalling python27 @2.7.5_1
+--->  Cleaning python27
+--->  Deactivating bzip2 @1.0.6_0
+--->  Cleaning bzip2
+--->  Uninstalling bzip2 @1.0.6_0
+--->  Cleaning bzip2
+--->  Deactivating ctags @5.8_1
+--->  Cleaning ctags
+--->  Uninstalling ctags @5.8_1
+--->  Cleaning ctags
+--->  Deactivating curl @7.32.0_0+ssl
+--->  Cleaning curl
+--->  Uninstalling curl @7.32.0_0+ssl
+--->  Cleaning curl
+--->  Deactivating curl-ca-bundle @7.32.0_0
+--->  Cleaning curl-ca-bundle
+--->  Uninstalling curl-ca-bundle @7.32.0_0
+--->  Cleaning curl-ca-bundle
+--->  Deactivating openldap @2.4.31_3
+--->  Cleaning openldap
+--->  Uninstalling openldap @2.4.31_3
+--->  Cleaning openldap
+--->  Deactivating cyrus-sasl2 @2.1.25_4+kerberos
+--->  Cleaning cyrus-sasl2
+--->  Uninstalling cyrus-sasl2 @2.1.25_4+kerberos
+--->  Cleaning cyrus-sasl2
+--->  Deactivating db46 @4.6.21_8
+--->  Cleaning db46
+--->  Uninstalling db46 @4.6.21_8
+--->  Cleaning db46
+--->  Deactivating db_select @0.1_2
+--->  Cleaning db_select
+--->  Uninstalling db_select @0.1_2
+--->  Cleaning db_select
+--->  Deactivating gauche @0.9.3.3_0
+--->  Cleaning gauche
+--->  Uninstalling gauche @0.9.3.3_0
+--->  Cleaning gauche
+--->  Deactivating help2man @1.43.3_0
+--->  Cleaning help2man
+--->  Uninstalling help2man @1.43.3_0
+--->  Cleaning help2man
+--->  Deactivating p5.12-getopt-long @2.400.0_0
+--->  Cleaning p5.12-getopt-long
+--->  Uninstalling p5.12-getopt-long @2.400.0_0
+--->  Cleaning p5.12-getopt-long
+--->  Deactivating p5.12-io-tty @1.100.0_0
+--->  Cleaning p5.12-io-tty
+--->  Uninstalling p5.12-io-tty @1.100.0_0
+--->  Cleaning p5.12-io-tty
+--->  Deactivating p5.12-ipc-cmd @0.820.0_0
+--->  Cleaning p5.12-ipc-cmd
+--->  Uninstalling p5.12-ipc-cmd @0.820.0_0
+--->  Cleaning p5.12-ipc-cmd
+--->  Deactivating p5.12-json-xs @2.230.0_3
+--->  Cleaning p5.12-json-xs
+--->  Uninstalling p5.12-json-xs @2.230.0_3
+--->  Cleaning p5.12-json-xs
+--->  Deactivating p5.12-package-deprecationmanager @0.130.0_0
+--->  Cleaning p5.12-package-deprecationmanager
+--->  Uninstalling p5.12-package-deprecationmanager @0.130.0_0
+--->  Cleaning p5.12-package-deprecationmanager
+--->  Deactivating p5.12-list-moreutils @0.330.0_1
+--->  Cleaning p5.12-list-moreutils
+--->  Uninstalling p5.12-list-moreutils @0.330.0_1
+--->  Cleaning p5.12-list-moreutils
+--->  Deactivating p5.12-locale-gettext @1.50.0_7
+--->  Cleaning p5.12-locale-gettext
+--->  Uninstalling p5.12-locale-gettext @1.50.0_7
+--->  Cleaning p5.12-locale-gettext
+--->  Deactivating p5.12-module-load-conditional @0.540.0_0
+--->  Cleaning p5.12-module-load-conditional
+--->  Uninstalling p5.12-module-load-conditional @0.540.0_0
+--->  Cleaning p5.12-module-load-conditional
+--->  Deactivating p5.12-params-check @0.380.0_0
+--->  Cleaning p5.12-params-check
+--->  Uninstalling p5.12-params-check @0.380.0_0
+--->  Cleaning p5.12-params-check
+--->  Deactivating p5.12-locale-maketext-simple @0.210.0_2
+--->  Cleaning p5.12-locale-maketext-simple
+--->  Uninstalling p5.12-locale-maketext-simple @0.210.0_2
+--->  Cleaning p5.12-locale-maketext-simple
+--->  Deactivating p5.12-math-round @0.60.0_2
+--->  Cleaning p5.12-math-round
+--->  Uninstalling p5.12-math-round @0.60.0_2
+--->  Cleaning p5.12-math-round
+--->  Deactivating p5.12-module-corelist @2.920.0_0
+--->  Cleaning p5.12-module-corelist
+--->  Uninstalling p5.12-module-corelist @2.920.0_0
+--->  Cleaning p5.12-module-corelist
+--->  Deactivating p5.12-module-load @0.240.0_0
+--->  Cleaning p5.12-module-load
+--->  Uninstalling p5.12-module-load @0.240.0_0
+--->  Cleaning p5.12-module-load
+--->  Deactivating p5.12-module-metadata @1.0.14_0
+--->  Cleaning p5.12-module-metadata
+--->  Uninstalling p5.12-module-metadata @1.0.14_0
+--->  Cleaning p5.12-module-metadata
+--->  Deactivating p5.12-package-stash-xs @0.210.0_3
+--->  Cleaning p5.12-package-stash-xs
+--->  Uninstalling p5.12-package-stash-xs @0.210.0_3
+--->  Cleaning p5.12-package-stash-xs
+--->  Deactivating p5.12-params-util @1.30.0_3
+--->  Cleaning p5.12-params-util
+--->  Uninstalling p5.12-params-util @1.30.0_3
+--->  Cleaning p5.12-params-util
+--->  Deactivating p5.12-parent @0.224.0_3
+--->  Cleaning p5.12-parent
+--->  Uninstalling p5.12-parent @0.224.0_3
+--->  Cleaning p5.12-parent
+--->  Deactivating p5.12-perl-ostype @1.3.0_0
+--->  Cleaning p5.12-perl-ostype
+--->  Uninstalling p5.12-perl-ostype @1.3.0_0
+--->  Cleaning p5.12-perl-ostype
+--->  Deactivating p5.12-perl-tidy @20101217_3
+--->  Cleaning p5.12-perl-tidy
+--->  Uninstalling p5.12-perl-tidy @20101217_3
+--->  Cleaning p5.12-perl-tidy
+--->  Deactivating p5.12-sub-install @0.925.0_3
+--->  Cleaning p5.12-sub-install
+--->  Uninstalling p5.12-sub-install @0.925.0_3
+--->  Cleaning p5.12-sub-install
+--->  Deactivating p5.12-sub-uplevel @0.240.0_0
+--->  Cleaning p5.12-sub-uplevel
+--->  Uninstalling p5.12-sub-uplevel @0.240.0_0
+--->  Cleaning p5.12-sub-uplevel
+--->  Deactivating p5.12-test-fatal @0.10.0_0
+--->  Cleaning p5.12-test-fatal
+--->  Uninstalling p5.12-test-fatal @0.10.0_0
+--->  Cleaning p5.12-test-fatal
+--->  Deactivating p5.12-test-leaktrace @0.100.0_3
+--->  Cleaning p5.12-test-leaktrace
+--->  Uninstalling p5.12-test-leaktrace @0.100.0_3
+--->  Cleaning p5.12-test-leaktrace
+--->  Deactivating p5.12-test-requires @0.60.0_3
+--->  Cleaning p5.12-test-requires
+--->  Uninstalling p5.12-test-requires @0.60.0_3
+--->  Cleaning p5.12-test-requires
+--->  Deactivating p5.12-test-simple @0.980.0_1
+--->  Cleaning p5.12-test-simple
+--->  Uninstalling p5.12-test-simple @0.980.0_1
+--->  Cleaning p5.12-test-simple
+--->  Deactivating p5.12-try-tiny @0.110.0_0
+--->  Cleaning p5.12-try-tiny
+--->  Uninstalling p5.12-try-tiny @0.110.0_0
+--->  Cleaning p5.12-try-tiny
+--->  Deactivating p5.12-version @0.990.200_0
+--->  Cleaning p5.12-version
+--->  Uninstalling p5.12-version @0.990.200_0
+--->  Cleaning p5.12-version
+--->  Deactivating p5.12-yaml @0.730.0_2
+--->  Cleaning p5.12-yaml
+--->  Uninstalling p5.12-yaml @0.730.0_2
+--->  Cleaning p5.12-yaml
+--->  Deactivating glib2 @2.36.4_0
+--->  Cleaning glib2
+--->  Uninstalling glib2 @2.36.4_0
+--->  Cleaning glib2
+--->  Deactivating perl5 @5.12.4_0+perl5_12
+--->  Cleaning perl5
+--->  Uninstalling perl5 @5.12.4_0+perl5_12
+--->  Cleaning perl5
+--->  Deactivating perl5.12 @5.12.4_2
+--->  Cleaning perl5.12
+--->  Uninstalling perl5.12 @5.12.4_2
+--->  Cleaning perl5.12
+--->  Deactivating gdbm @1.10_2
+--->  Cleaning gdbm
+--->  Uninstalling gdbm @1.10_2
+--->  Cleaning gdbm
+--->  Deactivating gsed @4.2.2_0
+--->  Cleaning gsed
+--->  Uninstalling gsed @4.2.2_0
+--->  Cleaning gsed
+--->  Deactivating kerberos5 @1.11.3_0
+--->  Cleaning kerberos5
+--->  Uninstalling kerberos5 @1.11.3_0
+--->  Cleaning kerberos5
+--->  Deactivating neon @0.29.6_2
+--->  Cleaning neon
+--->  Uninstalling neon @0.29.6_2
+--->  Cleaning neon
+--->  Deactivating libcomerr @1.42.7_2
+--->  Cleaning libcomerr
+--->  Uninstalling libcomerr @1.42.7_2
+--->  Cleaning libcomerr
+--->  Deactivating libassuan @2.1.1_0
+--->  Cleaning libassuan
+--->  Uninstalling libassuan @2.1.1_0
+--->  Cleaning libassuan
+--->  Deactivating libgcrypt @1.5.3_0
+--->  Cleaning libgcrypt
+--->  Uninstalling libgcrypt @1.5.3_0
+--->  Cleaning libgcrypt
+--->  Deactivating libgpg-error @1.12_0
+--->  Cleaning libgpg-error
+--->  Uninstalling libgpg-error @1.12_0
+--->  Cleaning libgpg-error
+--->  Deactivating libidn @1.26_0
+--->  Cleaning libidn
+--->  Uninstalling libidn @1.26_0
+--->  Cleaning libidn
+--->  Deactivating texinfo @4.13_2
+--->  Cleaning texinfo
+--->  Uninstalling texinfo @4.13_2
+--->  Cleaning texinfo
+--->  Deactivating libxml2 @2.9.1_0
+--->  Cleaning libxml2
+--->  Uninstalling libxml2 @2.9.1_0
+--->  Cleaning libxml2
+--->  Deactivating tiff @4.0.3_1
+--->  Cleaning tiff
+--->  Uninstalling tiff @4.0.3_1
+--->  Cleaning tiff
+--->  Deactivating xz @5.0.5_0
+--->  Cleaning xz
+--->  Uninstalling xz @5.0.5_0
+--->  Cleaning xz
+--->  Deactivating gettext @0.18.3.1_0
+--->  Cleaning gettext
+--->  Uninstalling gettext @0.18.3.1_0
+--->  Cleaning gettext
+--->  Deactivating expat @2.1.0_0
+--->  Cleaning expat
+--->  Uninstalling expat @2.1.0_0
+--->  Cleaning expat
+--->  Deactivating gnutls @3.1.10_0
+--->  Cleaning gnutls
+--->  Uninstalling gnutls @3.1.10_0
+--->  Cleaning gnutls
+--->  Deactivating nettle @2.6_1
+--->  Cleaning nettle
+--->  Uninstalling nettle @2.6_1
+--->  Cleaning nettle
+--->  Deactivating gmp @5.1.2_0
+--->  Cleaning gmp
+--->  Uninstalling gmp @5.1.2_0
+--->  Cleaning gmp
+--->  Deactivating gperf @3.0.4_2
+--->  Cleaning gperf
+--->  Uninstalling gperf @3.0.4_2
+--->  Cleaning gperf
+--->  Deactivating icu @51.2_1
+--->  Cleaning icu
+--->  Uninstalling icu @51.2_1
+--->  Cleaning icu
+--->  Deactivating jpeg @9_1
+--->  Cleaning jpeg
+--->  Uninstalling jpeg @9_1
+--->  Cleaning jpeg
+--->  Deactivating sqlite3 @3.8.0.2_0
+--->  Cleaning sqlite3
+--->  Uninstalling sqlite3 @3.8.0.2_0
+--->  Cleaning sqlite3
+--->  Deactivating libedit @20121213-3.0_0
+--->  Cleaning libedit
+--->  Uninstalling libedit @20121213-3.0_0
+--->  Cleaning libedit
+--->  Deactivating libevent @2.0.21_0
+--->  Cleaning libevent
+--->  Uninstalling libevent @2.0.21_0
+--->  Cleaning libevent
+--->  Deactivating libffi @3.0.13_0
+--->  Cleaning libffi
+--->  Uninstalling libffi @3.0.13_0
+--->  Cleaning libffi
+--->  Deactivating pkgconfig @0.28_0
+--->  Cleaning pkgconfig
+--->  Uninstalling pkgconfig @0.28_0
+--->  Cleaning pkgconfig
+--->  Deactivating libiconv @1.14_0
+--->  Cleaning libiconv
+--->  Uninstalling libiconv @1.14_0
+--->  Cleaning libiconv
+--->  Deactivating libpng @1.5.17_0
+--->  Cleaning libpng
+--->  Uninstalling libpng @1.5.17_0
+--->  Cleaning libpng
+--->  Deactivating libtasn1 @2.11_0
+--->  Cleaning libtasn1
+--->  Uninstalling libtasn1 @2.11_0
+--->  Cleaning libtasn1
+--->  Deactivating libtool @2.4.2_3
+--->  Cleaning libtool
+--->  Uninstalling libtool @2.4.2_3
+--->  Cleaning libtool
+--->  Deactivating libuninameslist @20091231_0
+--->  Cleaning libuninameslist
+--->  Uninstalling libuninameslist @20091231_0
+--->  Cleaning libuninameslist
+--->  Deactivating libusb-compat @0.1.4_0
+--->  Cleaning libusb-compat
+--->  Uninstalling libusb-compat @0.1.4_0
+--->  Cleaning libusb-compat
+--->  Deactivating libusb @1.0.9_0
+--->  Cleaning libusb
+--->  Uninstalling libusb @1.0.9_0
+--->  Cleaning libusb
+--->  Deactivating libyaml @0.1.4_1
+--->  Cleaning libyaml
+--->  Uninstalling libyaml @0.1.4_1
+--->  Cleaning libyaml
+--->  Deactivating lzo2 @2.06_0
+--->  Cleaning lzo2
+--->  Uninstalling lzo2 @2.06_0
+--->  Cleaning lzo2
+--->  Deactivating m4 @1.4.16_0
+--->  Cleaning m4
+--->  Uninstalling m4 @1.4.16_0
+--->  Cleaning m4
+--->  Deactivating mhash @0.9.9.9_0
+--->  Cleaning mhash
+--->  Uninstalling mhash @0.9.9.9_0
+--->  Cleaning mhash
+--->  Deactivating readline @6.2.000_0
+--->  Cleaning readline
+--->  Uninstalling readline @6.2.000_0
+--->  Cleaning readline
+--->  Deactivating ncurses @5.9_2
+--->  Cleaning ncurses
+--->  Uninstalling ncurses @5.9_2
+--->  Cleaning ncurses
+--->  Deactivating ncursesw @5.8_0
+--->  Cleaning ncursesw
+--->  Uninstalling ncursesw @5.8_0
+--->  Cleaning ncursesw
+--->  Deactivating nspr @4.10_0
+--->  Cleaning nspr
+--->  Uninstalling nspr @4.10_0
+--->  Cleaning nspr
+--->  Deactivating openssl @1.0.1e_1
+--->  Cleaning openssl
+--->  Uninstalling openssl @1.0.1e_1
+--->  Cleaning openssl
+--->  Deactivating protobuf-cpp @2.5.0_0
+--->  Cleaning protobuf-cpp
+--->  Uninstalling protobuf-cpp @2.5.0_0
+--->  Cleaning protobuf-cpp
+--->  Deactivating pth @2.0.7_0
+--->  Cleaning pth
+--->  Uninstalling pth @2.0.7_0
+--->  Cleaning pth
+--->  Deactivating python_select @0.3_2
+--->  Cleaning python_select
+--->  Uninstalling python_select @0.3_2
+--->  Cleaning python_select
+--->  Deactivating slib @3b2_0
+--->  Cleaning slib
+--->  Uninstalling slib @3b2_0
+--->  Cleaning slib
+--->  Deactivating tcp_wrappers @20_2
+--->  Cleaning tcp_wrappers
+--->  Uninstalling tcp_wrappers @20_2
+--->  Cleaning tcp_wrappers
+--->  Deactivating unrar @4.2.3_0
+--->  Cleaning unrar
+--->  Uninstalling unrar @4.2.3_0
+--->  Cleaning unrar
+--->  Deactivating xorg-fixesproto @5.0_0
+--->  Cleaning xorg-fixesproto
+--->  Uninstalling xorg-fixesproto @5.0_0
+--->  Cleaning xorg-fixesproto
+--->  Deactivating xorg-inputproto @2.3_0
+--->  Cleaning xorg-inputproto
+--->  Uninstalling xorg-inputproto @2.3_0
+--->  Cleaning xorg-inputproto
+--->  Deactivating xorg-kbproto @1.0.6_0
+--->  Cleaning xorg-kbproto
+--->  Uninstalling xorg-kbproto @1.0.6_0
+--->  Cleaning xorg-kbproto
+--->  Deactivating xorg-libsm @1.2.1_0
+--->  Cleaning xorg-libsm
+--->  Uninstalling xorg-libsm @1.2.1_0
+--->  Cleaning xorg-libsm
+--->  Deactivating xorg-libice @1.0.8_0
+--->  Cleaning xorg-libice
+--->  Uninstalling xorg-libice @1.0.8_0
+--->  Cleaning xorg-libice
+--->  Deactivating xorg-libpthread-stubs @0.3_0
+--->  Cleaning xorg-libpthread-stubs
+--->  Uninstalling xorg-libpthread-stubs @0.3_0
+--->  Cleaning xorg-libpthread-stubs
+--->  Deactivating xorg-libXau @1.0.8_0
+--->  Cleaning xorg-libXau
+--->  Uninstalling xorg-libXau @1.0.8_0
+--->  Cleaning xorg-libXau
+--->  Deactivating xorg-libXdmcp @1.1.1_0
+--->  Cleaning xorg-libXdmcp
+--->  Uninstalling xorg-libXdmcp @1.1.1_0
+--->  Cleaning xorg-libXdmcp
+--->  Deactivating xorg-util-macros @1.16.1_0
+--->  Cleaning xorg-util-macros
+--->  Uninstalling xorg-util-macros @1.16.1_0
+--->  Cleaning xorg-util-macros
+--->  Deactivating xorg-xcmiscproto @1.2.1_0
+--->  Cleaning xorg-xcmiscproto
+--->  Uninstalling xorg-xcmiscproto @1.2.1_0
+--->  Cleaning xorg-xcmiscproto
+--->  Deactivating xorg-xextproto @7.2.1_0
+--->  Cleaning xorg-xextproto
+--->  Uninstalling xorg-xextproto @7.2.1_0
+--->  Cleaning xorg-xextproto
+--->  Deactivating xorg-xf86bigfontproto @1.2.0_0
+--->  Cleaning xorg-xf86bigfontproto
+--->  Uninstalling xorg-xf86bigfontproto @1.2.0_0
+--->  Cleaning xorg-xf86bigfontproto
+--->  Deactivating xorg-xproto @7.0.24_0
+--->  Cleaning xorg-xproto
+--->  Uninstalling xorg-xproto @7.0.24_0
+--->  Cleaning xorg-xproto
+--->  Deactivating xorg-xtrans @1.2.6_0
+--->  Cleaning xorg-xtrans
+--->  Uninstalling xorg-xtrans @1.2.6_0
+--->  Cleaning xorg-xtrans
+--->  Deactivating zlib @1.2.8_0
+--->  Cleaning zlib
+--->  Uninstalling zlib @1.2.8_0
+--->  Cleaning zlib
+Okada-no-MacBook-Air-2% sudo rm -rf \
+>   /opt/local \
+>   /Applications/DarwinPorts \
+>   /Applications/MacPorts \
+>   /Library/LaunchDaemons/org.macports.* \
+>   /Library/Receipts/DarwinPorts*.pkg \
+>   /Library/Receipts/MacPorts*.pkg \
+>   /Library/StartupItems/DarwinPortsStartup \
+>   /Library/Tcl/darwinports1.0 \
+>   /Library/Tcl/macports1.0 \
+>   ~/.macports
+zsh: no matches found: /Library/LaunchDaemons/org.macports.*
