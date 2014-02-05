@@ -1,0 +1,56 @@
+MacBook-Air-2% brew install npm
+Warning: No developer tools installed.
+You should install the Command Line Tools.
+Run `xcode-select --install` to install them.
+Warning: It appears you have MacPorts or Fink installed.
+Software installed with other package managers causes known problems for
+Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.
+==> Downloading http://nodejs.org/dist/v0.10.24/node-v0.10.24.tar.gz
+######################################################################## 100.0%
+==> Patching
+patching file tools/gyp/pylib/gyp/xcode_emulation.py
+==> ./configure --prefix=/usr/local/Cellar/node/0.10.24
+==> make install
+==> Caveats
+Probably you should amend your PATH to include npm-installed binaries:
+    /usr/local/share/npm/bin
+==> Summary
+🍺  /usr/local/Cellar/node/0.10.24: 1119 files, 16M, built in 6.7 minutes
+Software installed with other package managers causes known problems for
+Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.
+Software installed with other package managers causes known problems for
+Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.
+Software installed with other package managers causes known problems for
+Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.
+Searching taps...
+
+MacBook-Air-2% brew install brew-cask
+Warning: No developer tools installed.
+You should install the Command Line Tools.
+Run `xcode-select --install` to install them.
+Warning: It appears you have MacPorts or Fink installed.
+Software installed with other package managers causes known problems for
+Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.
+==> Cloning https://github.com/phinze/homebrew-cask.git
+Cloning into '/Library/Caches/Homebrew/brew-cask--git'...
+remote: Counting objects: 1228, done.
+remote: Compressing objects: 100% (1214/1214), done.
+remote: Total 1228 (delta 6), reused 998 (delta 6)
+Receiving objects: 100% (1228/1228), 4.66 MiB | 92.00 KiB/s, done.
+Resolving deltas: 100% (6/6), done.
+Checking connectivity... done.
+Note: checking out 'e59dc2efcb2aef9be4f763a00d532dc1995e2f8c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+==> Checking out tag v0.27.1
+🍺  /usr/local/Cellar/brew-cask/0.27.1: 1133 files, 4.4M, built in 51 seconds
+Software installed with other package managers causes known problems for
+Homebrew. If a formula fails to build, uninstall MacPorts/Fink and try again.

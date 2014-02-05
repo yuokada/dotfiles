@@ -2,7 +2,8 @@
 update
 
 # Formulaを更新
-upgrade
+# 遅いのでたまに実行するだけでOK
+#upgrade
 
 # Add Repository
 tap homebrew/versions
@@ -10,25 +11,24 @@ tap phinze/homebrew-cask
 tap homebrew/binary
 
 # パッケージのインストール
-install coreutils
-install emacs
-install gist
+install brew-cask
 install git
-install markdown
-install nkf
-install proctools
-install rmtrash
-install rmtrash
 install tig
+install mosh
+install markdown
+install rmtrash
 install tmux
 install tree
 install wget
 install zsh
 install openssl
 install readline
-install imagemagick
-install brew-cask
+install coreutils
+install emacs
 install packer
+install readline
+install sqlite
+install gdbm
 
 # .dmg
 cask install google-chrome
