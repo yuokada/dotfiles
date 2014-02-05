@@ -90,7 +90,7 @@ setopt correct
 case ${OSTYPE} in
     darwin*)
         #ここにMac向けの設定
-        export PATH=$PATH:/opt/local/bin:/usr/local/share/npm/bin/
+        export PATH=$PATH:/usr/local/share/npm/bin/
         #alias emacs='/opt/local/bin/emacs-23.4'
         #alias emacs23='/opt/local/bin/emacs-23.4'
         alias emacs='/usr/local/bin/emacs-24.3'
@@ -98,6 +98,8 @@ case ${OSTYPE} in
         alias emacsclient='/opt/local/bin/emacsclient'
         alias emacs-comp="emacs23 -batch -f byte-compile"
         alias emacs-kill="emacsclient -e '(kill-emacs)'"
+        alias ls="ls -G"
+        export GOROOT=`go env /usr/local/Cellar/go/1.1.1`
         ;;
     linux*)
         #ここにLinux向けの設定
