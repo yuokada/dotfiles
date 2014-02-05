@@ -2,7 +2,8 @@
 update
 
 # Formulaを更新
-upgrade
+# 遅いのでたまに実行するだけでOK
+#upgrade
 
 # Add Repository
 tap homebrew/versions
@@ -13,6 +14,7 @@ tap homebrew/binary
 install brew-cask
 install git
 install tig
+install mosh
 install markdown
 install rmtrash
 install tmux
@@ -24,6 +26,9 @@ install readline
 install coreutils
 install emacs
 install packer
+install readline
+install sqlite
+install gdbm
 
 # .dmg
 cask install google-chrome
