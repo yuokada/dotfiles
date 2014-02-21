@@ -167,6 +167,9 @@ NeoBundle 'Rykka/riv.vim'
 "2013/08/15
 NeoBundle 'Shougo/neosnippet'
 
+"2013/12/30
+NeoBundle 'renamer.vim'
+
 "NeoBundle 'MarcWeber/vim-addon-manager'
 NeoBundle 'h1mesuke/unite-outline'
 
