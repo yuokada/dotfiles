@@ -102,7 +102,10 @@ au InsertLeave * hi StatusLine guifg=DarkBlue guibg=DarkGray   gui=none ctermfg=
 let g:ref_alc_encoding = 'Shift-JIS' " 文字化けするならここで文字コードを指定してみる
 
 " 保存時に行末の空白を除去する
-autocmd BufWritePre * :%s/\s\+$//ge
+"autocmd BufWritePre * :%s/\s\+$//ge
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufWritePre * if &filetype !=? 'markdown' | %s/ *$//ge | endif
+
 " 保存時にtabをスペースに変換する
 "autocmd BufWritePre * :%s/\t/ /ge
 
