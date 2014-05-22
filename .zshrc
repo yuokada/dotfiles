@@ -99,7 +99,11 @@ case ${OSTYPE} in
         alias emacs-comp="emacs23 -batch -f byte-compile"
         alias emacs-kill="emacsclient -e '(kill-emacs)'"
         alias ls="ls -G"
-        export GOROOT=`go env /usr/local/Cellar/go/1.1.1`
+        #export GOROOT=`go env /usr/local/Cellar/go/1.1.1`
+        export GOROOT=/usr/local/opt/go/libexec
+        export GOPATH=$HOME/go
+        export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+        export PATH=/opt/local/bin:$PATH
         ;;
     linux*)
         #ここにLinux向けの設定
