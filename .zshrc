@@ -99,7 +99,9 @@ case ${OSTYPE} in
         alias emacs-comp="emacs23 -batch -f byte-compile"
         alias emacs-kill="emacsclient -e '(kill-emacs)'"
         alias ls="ls -G"
-        export GOROOT=`go env /usr/local/Cellar/go/1.1.1`
+        export GOPATH=$HOME/go
+        export GOROOT='/usr/local/opt/go/libexec'
+        export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
         ;;
     linux*)
         #ここにLinux向けの設定
@@ -128,3 +130,5 @@ export GISTY_DIR=/Users/callistoiv/works/git
 
 source `which virtualenvwrapper.sh`
 [[ -s /Users/callistoiv/.tmuxinator/scripts/tmuxinator ]] && source /Users/callistoiv/.tmuxinator/scripts/tmuxinator
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
