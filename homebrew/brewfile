@@ -29,6 +29,8 @@ install packer
 install readline
 install sqlite
 install gdbm
+install mercurial
+install ngrep
 
 # .dmg
 cask install google-chrome
