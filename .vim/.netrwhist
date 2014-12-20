@@ -1,9 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/callistoiv/works/coding/bms/vagrant/site-cookbooks/composer/recipes'
-let g:netrw_dirhist_2='/Users/callistoiv/works/coding/bms/vagrant/site-cookbooks/fuelphp'
-let g:netrw_dirhist_3='/Users/callistoiv/works/coding/bms/vagrant/site-cookbooks/fuelphp/files'
-let g:netrw_dirhist_4='/Users/callistoiv/works/coding/bms/vagrant/site-cookbooks/fuelphp/files/default'
-let g:netrw_dirhist_5='/Users/callistoiv/works/coding/bms/vagrant/site-cookbooks/base/templates'
-let g:netrw_dirhist_6='/Users/callistoiv/works/coding/bms/vagrant/site-cookbooks/base/templates/default'
-let g:netrw_dirhist_7='/Users/callistoiv/works/coding/bms/vagrant/site-cookbooks/mysql56/recipes'
+let g:netrw_dirhist_cnt =0

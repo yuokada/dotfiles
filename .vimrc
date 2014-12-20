@@ -10,6 +10,7 @@ set cindent
 set smartindent
 set expandtab
 
+set background=dark
 set backspace=start,indent,eol
 
 set hlsearch        " highlight searches
@@ -63,7 +64,7 @@ autocmd FileType inc :set dictionary=$HOME/.vim/dict/php.dict
 
 "PHP Editor
 set makeprg=php\ -l\ %
-set errorformat=%m\ in\ %f\ on\ line\ %l
+"set errorformat=%m\ in\ %f\ on\ line\ %l
 let php_folding=1
 au Syntax php set fdm=syntax
 let php_sql_query=1
@@ -152,8 +153,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'taglist-plus'
 NeoBundle 'taglist.vim'
 "2012/09/20
-NeoBundle 'errormarker.vim'
-NeoBundle 'phpErrorMarker'
+"NeoBundle 'errormarker.vim'
+"NeoBundle 'phpErrorMarker'
 NeoBundle 'ZenCoding.vim'
 NeoBundle 'Zen-Color-Scheme'
 NeoBundle 'repeat.vim'
@@ -172,6 +173,13 @@ NeoBundle 'renamer.vim'
 
 "NeoBundle 'MarcWeber/vim-addon-manager'
 NeoBundle 'h1mesuke/unite-outline'
+
+"NeoBundleInstall 'Blackrush/vim-gocode'
+
+
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'moll/vim-node'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " last nsert
 "NeoBundle 'pep8'
@@ -235,7 +243,8 @@ let Tlist_Exit_OnlyWindow = 1
 
 set guifont=Ricty:h14
 
-colorscheme molokai
+colorscheme solarized
+"colorscheme molokai
 "colorscheme rdark
 set t_Co=256
 set background=light
@@ -247,6 +256,13 @@ set background=light
 " golang
 if $GOROOT != ''
   set rtp+=$GOROOT/misc/vim
+  " Go に付属の plugin と gocode を有効にする
+  " set rtp^=${GOROOT}/misc/vim
+  " set rtp^=${GOPATH}/src/github.com/nsf/gocode/vim
+  set rtp+=${GOROOT}/misc/vim
+  set rtp+=${GOPATH}/src/github.com/nsf/gocode/vim
+  exe "set rtp+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+  set completeopt=menu,preview
 endif
 
 " neosnippet
@@ -282,4 +298,11 @@ let g:neosnippet#snippets_directory=$HOME.'/.vim/snippets'
 "
 "" スニペットで単語が選択されている場合でも <Tab> で次のプレースホルダへ移動する
 "vmap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : "\<Tab>"
+"augroup filetypedetect
+"  " Cのタブ幅は4で
+"  au BufNewFile,BufRead *.c    setlocal tabstop=4 shiftwidth=4
+"  au BufNewFile,BufRead *.cpp  setlocal tabstop=4 shiftwidth=4
+"  au BufNewFile,BufRead *.h    setlocal tabstop=4 shiftwidth=4
+"augroup END
 
+autocmd BufNewFile,BufRead *.twig set ft=html
