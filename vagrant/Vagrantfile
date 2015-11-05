@@ -19,11 +19,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 80, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network :private_network, ip: "192.168.33.10"
+  config.vm.network :private_network, ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -46,7 +46,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   config.vm.provider :virtualbox do |vb|
     # Don't boot with headless mode
-    vb.gui = true
+    vb.gui = false
   #
   #   # Use VBoxManage to customize the VM. For example to change memory:
   #   vb.customize ["modifyvm", :id, "--memory", "1024"]
@@ -119,5 +119,25 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell" do |s|
     s.inline = "echo $1"
     s.args   = "'hello, world!'"
+  end
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = "./vendor/cookbooks"
+    # chef.roles_path = "../my-recipes/roles"
+    # chef.data_bags_path = "../my-recipes/data_bags"
+    chef.add_recipe "golang"
+    # You may also specify custom JSON attributes:
+    # chef.json = { :mysql_password => "foo" }
+    chef.json = {
+        go: {
+            :version => '1.3'
+        }
+    }
+  end
+  # https://github.com/fgrehm/vagrant-cachier
+  if Vagrant.has_plugin?("vagrant-cachier")
+    # Configure cached packages to be shared between instances of the same base box.
+    # More info on http://fgrehm.viewdocs.io/vagrant-cachier/usage
+    config.cache.scope = :box
+    # For more information please check http://docs.vagrantup.com/v2/synced-folders/basic_usage.html
   end
 end
