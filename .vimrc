@@ -181,6 +181,14 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'moll/vim-node'
 NeoBundle 'kchmck/vim-coffee-script'
 
+"clojure
+NeoBundle 'guns/vim-clojure-static'
+NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'tpope/vim-fireplace'
+NeoBundle 'tpope/vim-classpath'
+
+
+
 " last nsert
 "NeoBundle 'pep8'
 filetype plugin indent on
@@ -243,8 +251,8 @@ let Tlist_Exit_OnlyWindow = 1
 
 set guifont=Ricty:h14
 
-colorscheme solarized
-"colorscheme molokai
+" colorscheme solarized
+colorscheme molokai
 "colorscheme rdark
 set t_Co=256
 set background=light
