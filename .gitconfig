@@ -1,22 +1,41 @@
 [user]
-name = yuokada
-email = callistoiv+git@gmail.com
+	name = yuokada
+	email = callistoiv+git@gmail.com
+
 [color]
-    ui = auto
+	ui = auto
+
+
+[github]
+	user = yuokada
+	token = dummy_token
 
 [core]
- editor = vim
+	editor = vim
+	excludesfile = /Users/callistoiv/.gitignore_global
 
 [alias]
-  ci = commit
-  co = checkout # checkout長い…
-  st = status -sb # シンプルなstatus
-  pr = pull --rebase # pull するときにmergeコミットを作らない
-  fo = fetch origin
-  ro = rebase origin # branchでfoしてroすればmasterにrebaseできる
-  rc = rebase --continue
-  wd = diff --word-diff # 単語単位のdiff
-  gp = grep -n # grepに行番号を付ける
-  lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
-  # ログをtreeで表示(簡易tig) via http://webtech-walker.com/archive/2010/03/04034601.html
+	br = branch
+	ci = commit -v
+	co = checkout # checkout長い…
+	st = status -sb # シンプルなstatus
+	pr = pull --rebase # pull するときにmergeコミットを作らない
+	fo = fetch origin
+	ro = rebase origin # branchでfoしてroすればmasterにrebaseできる
+	rc = rebase --continue
+	wd = diff --word-diff # 単語単位のdiff
+	gp = grep -n # grepに行番号を付ける
+	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
+	# ログをtreeで表示(簡易tig) via http://webtech-walker.com/archive/2010/03/04034601.html
 
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+#[include]
+#path = ~/dotfiles/.gitconfig.local
+[push]
+	default = current

@@ -1,0 +1,6 @@
+*~
+.DS_Store
+tags
+*.egg
+.idea
+*.egg-info
