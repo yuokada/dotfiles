@@ -6,7 +6,7 @@ SAVEHIST=100000
 
 ## 補完機能の強化
 autoload -U compinit
-compinit
+compinit -u
 
 ## コアダンプサイズを制限
 limit coredumpsize 102400
@@ -137,7 +137,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 
 ## peco
-#
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -167,4 +166,23 @@ function _pip_completion {
 }
 compctl -K _pip_completion pip
 # pip zsh completion end
+
+# if [ -e /usr/local/share/zsh-completions ]; then
+#     fpath=(/usr/local/share/zsh-completions $fpath)
+#     fpath=(/usr/local/share/zsh/site-functions/_lein $fpath)
+#     export PATH=$PATH:/usr/local/opt/leiningen/bin/
+# fi
+
+# tmux
+alias tmux="TERM=screen-256color tmux"
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/callistoiv/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
+if [ -e /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+# #  caffe setting
+# export CAFFE_DIR=~/works/project/dotfiles/vagrant/caffe
+# export PYTHONPATH=$CAFFE_DIR/python
 
