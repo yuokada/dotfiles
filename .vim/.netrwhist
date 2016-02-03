@@ -1,2 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Volumes/PORTABLE/Down/単体女優/麻倉優'
+let g:netrw_dirhist_2='/Users/callistoiv/works/project/dotfiles/vagrant/nginx/conf'
+let g:netrw_dirhist_3='/Users/callistoiv/tmp/dockerfile-pypi2rpmbuild/SPECS'
+let g:netrw_dirhist_4='/Users/callistoiv/works/docker/docker-influxdb/grafana'
+let g:netrw_dirhist_5='/Users/callistoiv/works/docker/docker-influxdb'
+let g:netrw_dirhist_6='/Users/callistoiv/Dropbox/スクリーンショット/JPEG Images'
+let g:netrw_dirhist_7='/Users/callistoiv/works/gae/myapp/hello'
+let g:netrw_dirhist_8='/Users/callistoiv/works/docker/docker-influxdb/influxdb'
+let g:netrw_dirhist_9='/Users/callistoiv/works/IdeaProjects/go-scripts/walker'
