@@ -159,6 +159,7 @@ yaccは`%%`で全体を3分割する。
 残りの`%union`,`%token`,`%type`,`%left`について説明する。
 
 ### %union
+
 文法の構成要素は`yyParse`内で全て`yySymType`型の変数にいれる。この`yySymType`の宣言が`%union`である。
 トークン、式、文など全てを区別しつつ全て`yySymType`にいれるために、yySymTypeはstructとして定義される。
 規則部の`$$ =`(後述)は`yyVAL.expr =`と変換され(`yyVAL`は`yySymType`型)、トークンや式の代入先に`yySymType`のメンバが使われていることがわかる。
@@ -193,6 +194,7 @@ yaccは`%%`で全体を3分割する。
 のようにすると、隣り合う物同士は優先順位が同じで、後に書かれた`*`と`/`の優先順位が`+`と`-`より高くなる。
 
 ## yyParseの引数
+
 先ほど、`yyParse`は`func(yyLexer) int`型であると述べた。
 [公式のドキュメント](http://golang.org/cmd/yacc/)にも書いてある、
 
