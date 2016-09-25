@@ -3,7 +3,7 @@
 package main
 
 import (
-	"text/scanner"
+"	text/scanner"
 	"os"
 	"strconv"
 	"strings"
@@ -87,9 +87,9 @@ type Lexer struct {
 func (l *Lexer) Lex(lval *yySymType) int {
     token := int(l.Scan())
 		fmt.Printf("DEBUG: %d:'%s' \n", token, l.TokenText())
-    if token == scanner.Int {
-        token = NUMBER
-    }
+	if token == scanner.Int {
+	     token = NUMBER
+	}
 		// if token == scanner.Ident {
 		// if token == scanner.Ident {
 		// 			fmt.Printf("DEBUG: %d:'%s' \n", token, l.TokenText())
@@ -125,21 +125,9 @@ func Eval(e Expression) int {
 }
 
 func main() {
-    l := new(Lexer)
-    l.Init(strings.NewReader(os.Args[1]))
-    // MEMO: ここからスタート
-    yyParse(l)
-    fmt.Printf("%#v, %d \n", l.result, Eval(l.result))
+	l := new(Lexer)
+	l.Init(strings.NewReader(os.Args[1]))
+	// MEMO: ここからスタート
+	yyParse(l)
+	fmt.Printf("%#v, %d \n", l.result, Eval(l.result))
 }
-
-/* ユーザー定義部 ここまで */
-
-// main.BinOpExpr{
-//   left:main.BinOpExpr{
-//     left:main.NumExpr{literal:"1"},
-//     operator:43,
-//     right:main.NumExpr{literal:"2"}
-//   },
-//   operator:43,
-//   right:main.NumExpr{literal:"3"}
-// }
