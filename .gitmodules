@@ -6,3 +6,9 @@
 path = .vim/bundle.git
 url  = http://github.com/gmarik/vundle.git
 
+[submodule "yacc/sample_repo/goyacc_sample"]
+	path = yacc/sample_repo/goyacc_sample
+	url = https://github.com/draftcode/goyacc_sample.git
+[submodule "yacc/sample_repo/goyacc-jq-query-parser"]
+	path = yacc/sample_repo/goyacc-jq-query-parser
+	url = https://github.com/zoncoen-sample/goyacc-jq-query-parser.git
