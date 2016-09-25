@@ -35,7 +35,7 @@ type BinOpExpr struct {
 %type<expr> expr
 %token<token> NUMBER
 
-%left '+'
+%left '+' '-'
 
 /* 規則部 ここから */
 %%
@@ -55,6 +55,10 @@ expr
     | expr '+' expr
     {
         $$ = BinOpExpr{left: $1, operator: '+', right: $3}
+    }
+    | expr '-' expr
+    {
+        $$ = BinOpExpr{left: $1, operator: '-', right: $3}
     }
 
 %%

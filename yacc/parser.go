@@ -41,6 +41,7 @@ var yyToknames = [...]string{
 	"$unk",
 	"NUMBER",
 	"'+'",
+	"'-'",
 }
 var yyStatenames = [...]string{}
 
@@ -48,9 +49,13 @@ const yyEofCode = 1
 const yyErrCode = 2
 const yyInitialStackSize = 16
 
-//line parser.go.y:60
+//line parser.go.y:64
 
 /* 規則部 ここまで */
+/*
+ヘッダとユーザ定義部には好き放題goのコードを書くことができる。どちらに何を書いても同じである。
+普通に考えたらyyParseをラップする関数を書くべきで、この例ではmain()である。
+*/
 /* ユーザー定義部 ここから */
 
 type Lexer struct {
@@ -74,6 +79,7 @@ func (l *Lexer) Error(e string) {
 func main() {
 	l := new(Lexer)
 	l.Init(strings.NewReader(os.Args[1]))
+	// MEMO: ここからスタート
 	yyParse(l)
 	fmt.Printf("%#v\n", l.result)
 }
@@ -87,41 +93,41 @@ var yyExca = [...]int{
 	-2, 0,
 }
 
-const yyNprod = 4
+const yyNprod = 5
 const yyPrivate = 57344
 
 var yyTokenNames []string
 var yyStates []string
 
-const yyLast = 7
+const yyLast = 9
 
 var yyAct = [...]int{
 
-	4, 2, 3, 1, 0, 0, 5,
+	4, 5, 2, 3, 1, 0, 0, 6, 7,
 }
 var yyPact = [...]int{
 
-	-2, -1000, -5, -1000, -2, -1000,
+	-1, -1000, -5, -1000, -1, -1, -1000, -1000,
 }
 var yyPgo = [...]int{
 
-	0, 3, 1,
+	0, 4, 2,
 }
 var yyR1 = [...]int{
 
-	0, 1, 2, 2,
+	0, 1, 2, 2, 2,
 }
 var yyR2 = [...]int{
 
-	0, 1, 1, 3,
+	0, 1, 1, 3, 3,
 }
 var yyChk = [...]int{
 
-	-1000, -1, -2, 4, 5, -2,
+	-1000, -1, -2, 4, 5, 6, -2, -2,
 }
 var yyDef = [...]int{
 
-	0, -2, 1, 2, 0, 3,
+	0, -2, 1, 2, 0, 0, 3, 4,
 }
 var yyTok1 = [...]int{
 
@@ -129,7 +135,7 @@ var yyTok1 = [...]int{
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 5,
+	3, 3, 3, 5, 3, 6,
 }
 var yyTok2 = [...]int{
 
@@ -494,6 +500,12 @@ yydefault:
 		//line parser.go.y:56
 		{
 			yyVAL.expr = BinOpExpr{left: yyDollar[1].expr, operator: '+', right: yyDollar[3].expr}
+		}
+	case 4:
+		yyDollar = yyS[yypt-3 : yypt+1]
+		//line parser.go.y:60
+		{
+			yyVAL.expr = BinOpExpr{left: yyDollar[1].expr, operator: '-', right: yyDollar[3].expr}
 		}
 	}
 	goto yystack /* stack new state and value */

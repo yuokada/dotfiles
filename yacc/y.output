@@ -18,8 +18,10 @@ state 1
 state 2
 	program:  expr.    (1)
 	expr:  expr.'+' expr 
+	expr:  expr.'-' expr 
 
 	'+'  shift 4
+	'-'  shift 5
 	.  reduce 1 (src line 43)
 
 
@@ -35,24 +37,41 @@ state 4
 	NUMBER  shift 3
 	.  error
 
-	expr  goto 5
+	expr  goto 6
 
 state 5
+	expr:  expr '-'.expr 
+
+	NUMBER  shift 3
+	.  error
+
+	expr  goto 7
+
+state 6
 	expr:  expr.'+' expr 
 	expr:  expr '+' expr.    (3)
+	expr:  expr.'-' expr 
 
 	.  reduce 3 (src line 55)
 
 
-5 terminals, 3 nonterminals
-4 grammar rules, 6/2000 states
+state 7
+	expr:  expr.'+' expr 
+	expr:  expr.'-' expr 
+	expr:  expr '-' expr.    (4)
+
+	.  reduce 4 (src line 59)
+
+
+6 terminals, 3 nonterminals
+5 grammar rules, 8/2000 states
 0 shift/reduce, 0 reduce/reduce conflicts reported
 52 working sets used
-memory: parser 2/30000
+memory: parser 3/30000
 0 extra closures
-3 shift entries, 1 exceptions
-3 goto entries
+5 shift entries, 1 exceptions
+4 goto entries
 0 entries saved by goto default
-Optimizer space used: output 7/30000
-7 table entries, 2 zero
-maximum spread: 5, maximum offset: 5
+Optimizer space used: output 9/30000
+9 table entries, 2 zero
+maximum spread: 6, maximum offset: 5
