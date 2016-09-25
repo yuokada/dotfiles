@@ -1,12 +1,11 @@
-//line parser.go.y:3
 package main
 
 import __yyfmt__ "fmt"
 
-//line parser.go.y:3
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 	"text/scanner"
 )
@@ -25,8 +24,6 @@ type BinOpExpr struct {
 	operator rune
 	right    Expression
 }
-
-//line parser.go.y:29
 type yySymType struct {
 	yys   int
 	token Token
@@ -42,14 +39,14 @@ var yyToknames = [...]string{
 	"NUMBER",
 	"'+'",
 	"'-'",
+	"'*'",
+	"'/'",
 }
 var yyStatenames = [...]string{}
 
 const yyEofCode = 1
 const yyErrCode = 2
 const yyInitialStackSize = 16
-
-//line parser.go.y:64
 
 /* 規則部 ここまで */
 /*
@@ -65,9 +62,14 @@ type Lexer struct {
 
 func (l *Lexer) Lex(lval *yySymType) int {
 	token := int(l.Scan())
+	fmt.Printf("DEBUG: %d:'%s' \n", token, l.TokenText())
 	if token == scanner.Int {
 		token = NUMBER
 	}
+	// if token == scanner.Ident {
+	// if token == scanner.Ident {
+	// 			fmt.Printf("DEBUG: %d:'%s' \n", token, l.TokenText())
+	// }
 	lval.token = Token{token: token, literal: l.TokenText()}
 	return token
 }
@@ -76,58 +78,93 @@ func (l *Lexer) Error(e string) {
 	panic(e)
 }
 
+func Eval(e Expression) int {
+	switch e.(type) {
+	case BinOpExpr:
+		left := Eval(e.(BinOpExpr).left)
+		right := Eval(e.(BinOpExpr).right)
+		switch e.(BinOpExpr).operator {
+		case '+':
+			return left + right
+		case '-':
+			return left - right
+		case '*':
+			return left * right
+		case '/':
+			return left / right
+		}
+	case NumExpr:
+		num, _ := strconv.Atoi(e.(NumExpr).literal)
+		return num
+	}
+	return 0
+}
+
 func main() {
 	l := new(Lexer)
 	l.Init(strings.NewReader(os.Args[1]))
 	// MEMO: ここからスタート
 	yyParse(l)
-	fmt.Printf("%#v\n", l.result)
+	fmt.Printf("%#v, %d \n", l.result, Eval(l.result))
 }
 
 /* ユーザー定義部 ここまで */
 
-//line yacctab:1
+// main.BinOpExpr{
+//   left:main.BinOpExpr{
+//     left:main.NumExpr{literal:"1"},
+//     operator:43,
+//     right:main.NumExpr{literal:"2"}
+//   },
+//   operator:43,
+//   right:main.NumExpr{literal:"3"}
+// }
+
 var yyExca = [...]int{
 	-1, 1,
 	1, -1,
 	-2, 0,
 }
 
-const yyNprod = 5
+const yyNprod = 7
 const yyPrivate = 57344
 
 var yyTokenNames []string
 var yyStates []string
 
-const yyLast = 9
+const yyLast = 13
 
 var yyAct = [...]int{
 
-	4, 5, 2, 3, 1, 0, 0, 6, 7,
+	4, 5, 6, 7, 2, 6, 7, 3, 1, 8,
+	9, 10, 11,
 }
 var yyPact = [...]int{
 
-	-1, -1000, -5, -1000, -1, -1, -1000, -1000,
+	3, -1000, -5, -1000, 3, 3, 3, 3, -2, -2,
+	-1000, -1000,
 }
 var yyPgo = [...]int{
 
-	0, 4, 2,
+	0, 8, 4,
 }
 var yyR1 = [...]int{
 
-	0, 1, 2, 2, 2,
+	0, 1, 2, 2, 2, 2, 2,
 }
 var yyR2 = [...]int{
 
-	0, 1, 1, 3, 3,
+	0, 1, 1, 3, 3, 3, 3,
 }
 var yyChk = [...]int{
 
-	-1000, -1, -2, 4, 5, 6, -2, -2,
+	-1000, -1, -2, 4, 5, 6, 7, 8, -2, -2,
+	-2, -2,
 }
 var yyDef = [...]int{
 
-	0, -2, 1, 2, 0, 0, 3, 4,
+	0, -2, 1, 2, 0, 0, 0, 0, 3, 4,
+	5, 6,
 }
 var yyTok1 = [...]int{
 
@@ -135,7 +172,7 @@ var yyTok1 = [...]int{
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
 	3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-	3, 3, 3, 5, 3, 6,
+	3, 3, 7, 5, 3, 6, 3, 8,
 }
 var yyTok2 = [...]int{
 
@@ -150,8 +187,6 @@ var yyErrorMessages = [...]struct {
 	token int
 	msg   string
 }{}
-
-//line yaccpar:1
 
 /*	parser for yacc output	*/
 
@@ -484,28 +519,34 @@ yydefault:
 
 	case 1:
 		yyDollar = yyS[yypt-1 : yypt+1]
-		//line parser.go.y:45
 		{
 			yyVAL.expr = yyDollar[1].expr
 			yylex.(*Lexer).result = yyVAL.expr
 		}
 	case 2:
 		yyDollar = yyS[yypt-1 : yypt+1]
-		//line parser.go.y:52
 		{
 			yyVAL.expr = NumExpr{literal: yyDollar[1].token.literal}
 		}
 	case 3:
 		yyDollar = yyS[yypt-3 : yypt+1]
-		//line parser.go.y:56
 		{
 			yyVAL.expr = BinOpExpr{left: yyDollar[1].expr, operator: '+', right: yyDollar[3].expr}
 		}
 	case 4:
 		yyDollar = yyS[yypt-3 : yypt+1]
-		//line parser.go.y:60
 		{
 			yyVAL.expr = BinOpExpr{left: yyDollar[1].expr, operator: '-', right: yyDollar[3].expr}
+		}
+	case 5:
+		yyDollar = yyS[yypt-3 : yypt+1]
+		{
+			yyVAL.expr = BinOpExpr{left: yyDollar[1].expr, operator: '*', right: yyDollar[3].expr}
+		}
+	case 6:
+		yyDollar = yyS[yypt-3 : yypt+1]
+		{
+			yyVAL.expr = BinOpExpr{left: yyDollar[1].expr, operator: '/', right: yyDollar[3].expr}
 		}
 	}
 	goto yystack /* stack new state and value */
