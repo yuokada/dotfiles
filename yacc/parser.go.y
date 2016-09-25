@@ -3,10 +3,11 @@
 package main
 
 import (
-    "fmt"
-    "text/scanner"
-    "os"
-    "strings"
+	"text/scanner"
+	"os"
+	"strconv"
+	"strings"
+	"fmt"
 )
 
 type Expression interface{}
@@ -35,7 +36,8 @@ type BinOpExpr struct {
 %type<expr> expr
 %token<token> NUMBER
 
-%left '+' '-'
+%left '+', '-'
+%left '*', '/'
 
 /* 規則部 ここから */
 %%
@@ -60,6 +62,14 @@ expr
     {
         $$ = BinOpExpr{left: $1, operator: '-', right: $3}
     }
+    | expr '*' expr
+    {
+        $$ = BinOpExpr{left: $1, operator: '*', right: $3}
+    }
+    | expr '/' expr
+    {
+        $$ = BinOpExpr{left: $1, operator: '/', right: $3}
+    }
 
 %%
 /* 規則部 ここまで */
@@ -76,9 +86,14 @@ type Lexer struct {
 
 func (l *Lexer) Lex(lval *yySymType) int {
     token := int(l.Scan())
+		fmt.Printf("DEBUG: %d:'%s' \n", token, l.TokenText())
     if token == scanner.Int {
         token = NUMBER
     }
+		// if token == scanner.Ident {
+		// if token == scanner.Ident {
+		// 			fmt.Printf("DEBUG: %d:'%s' \n", token, l.TokenText())
+		// }
     lval.token = Token{token: token, literal: l.TokenText()}
     return token
 }
@@ -87,12 +102,44 @@ func (l *Lexer) Error(e string) {
     panic(e)
 }
 
+func Eval(e Expression) int {
+	switch e.(type) {
+	case BinOpExpr:
+		left := Eval(e.(BinOpExpr).left)
+		right := Eval(e.(BinOpExpr).right)
+		switch e.(BinOpExpr).operator {
+		case '+':
+			return left + right
+		case '-':
+			return left - right
+		case '*':
+			return left * right
+		case '/':
+			return left / right
+		}
+	case NumExpr:
+		num, _ := strconv.Atoi(e.(NumExpr).literal)
+		return num
+	}
+	return 0
+}
+
 func main() {
     l := new(Lexer)
     l.Init(strings.NewReader(os.Args[1]))
     // MEMO: ここからスタート
     yyParse(l)
-    fmt.Printf("%#v\n", l.result)
+    fmt.Printf("%#v, %d \n", l.result, Eval(l.result))
 }
 
 /* ユーザー定義部 ここまで */
+
+// main.BinOpExpr{
+//   left:main.BinOpExpr{
+//     left:main.NumExpr{literal:"1"},
+//     operator:43,
+//     right:main.NumExpr{literal:"2"}
+//   },
+//   operator:43,
+//   right:main.NumExpr{literal:"3"}
+// }
