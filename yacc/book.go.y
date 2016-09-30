@@ -11,12 +11,9 @@ import (
 )
 
 type Expression interface{}
+
 type Token struct {
     token   int
-    literal string
-}
-
-type NumExpr struct {
     literal string
 }
 
@@ -32,6 +29,9 @@ type WordExpr struct {
 
 %token<expr>  S
 %token<expr>  sent
+%token<token> subject
+%token<token> verb
+%token<token> object
 %token<token> I
 %token<token> YOU
 %token<token> LOVE
@@ -46,7 +46,7 @@ S : sent
         yylex.(*Lexer).result = $$
     }
 
-sent : seubject verb object
+sent : subject verb object
     {
         $$ = $1
         yylex.(*Lexer).result = $$
