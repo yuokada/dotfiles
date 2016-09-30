@@ -27,7 +27,6 @@ type WordExpr struct {
     expr  Expression
 }
 
-%token<expr>  S
 %token<expr>  sent
 %token<token> subject
 %token<token> verb
@@ -40,35 +39,38 @@ type WordExpr struct {
 
 %%
 
-S : sent
-    {
-        $$ = $1
-        yylex.(*Lexer).result = $$
-    }
+sent
+	: subject verb object
+  {
+      $$ = $1
+      yylex.(*Lexer).result = $$
+  }
 
-sent : subject verb object
-    {
-        $$ = $1
-        yylex.(*Lexer).result = $$
-    }
+subject
+	: I
+	{
+    WordExpr{literal: $1.literal}
+  }
+  | YOU
+	{
+    WordExpr{literal: $1.literal}
+  }
 
-subject : I {
-        WordExpr{literal: $1.literal}
-      }
-      | YOU {
-        WordExpr{literal: $1.literal}
-      }
+verb
+	: LOVE
+	{
+    WordExpr{literal: $1.literal}
+  }
 
-verb : LOVE {
-                WordExpr{literal: $1.literal}
-      }
-
-object : ME {
-          WordExpr{literal: $1.literal}
-        }
-        | YOU {
-          WordExpr{literal: $1.literal}
-        }
+object
+	: ME
+	{
+    WordExpr{literal: $1.literal}
+  }
+  | YOU
+	{
+    WordExpr{literal: $1.literal}
+  }
 
 %%
 /* 規則部 ここまで */
