@@ -5,9 +5,11 @@ package main
 import (
 	"text/scanner"
 	"os"
-	"strconv"
+	// "strconv"
 	"strings"
 	"fmt"
+	"log"
+	"github.com/pkg/errors"
 )
 
 type Expression interface{}
@@ -27,20 +29,17 @@ type WordExpr struct {
     expr  Expression
 }
 
-%token<expr>  sent
-%token<token> subject
-%token<token> verb
-%token<token> object
+%type<expr>  sent
+%type<expr> subject
 %token<token> I
 %token<token> YOU
-%token<token> LOVE
+%token<token> WORD
 %token<token> ME
-%token<token> NL
 
 %%
 
 sent
-	: subject verb object
+	: subject
   {
       $$ = $1
       yylex.(*Lexer).result = $$
@@ -49,28 +48,17 @@ sent
 subject
 	: I
 	{
-    WordExpr{literal: $1.literal}
+    $$ = $1
   }
   | YOU
 	{
-    WordExpr{literal: $1.literal}
+    $$ = $1
+  }
+	| WORD
+	{
+    $$ = $1
   }
 
-verb
-	: LOVE
-	{
-    WordExpr{literal: $1.literal}
-  }
-
-object
-	: ME
-	{
-    WordExpr{literal: $1.literal}
-  }
-  | YOU
-	{
-    WordExpr{literal: $1.literal}
-  }
 
 %%
 /* 規則部 ここまで */
@@ -86,30 +74,35 @@ type Lexer struct {
 }
 
 func (l *Lexer) Lex(lval *yySymType) int {
+	fmt.Printf("DEBUG0 : start \n")
 	token := int(l.Scan())
-	fmt.Printf("DEBUG: %d:'%s' \n", token, l.TokenText())
-	if token == scanner.Int {
-		 token = NUMBER
-	}
+	fmt.Printf("DEBUG1 : %d:'%s' \n", token, l.TokenText())
+	// if token == scanner.Int {
+	// 	 token = NUMBER
+	// }
 	switch l.TokenText() {
 	case "I":
 		token = I
 	case "YOU":
 		token = YOU
-	case "LOVE":
-		token = LOVE
+		// case "LOVE":
+		// 	token = LOVE
 	case "ME":
 		token = ME
-	case "\n":
-			token = NL
+	// case "\n":
+	// 		token = NL
 	default:
-		token =NUMBER
+		// -1のときさっさと返せばいい?
+		fmt.Printf(">>DEBUG: %#v\n", token)
+		// token = WORD
 	}
+	// TODO: たぶん、ここが間違ってる。
 	lval.token = Token{token: token, literal: l.TokenText()}
 	return token
 }
 
 func (l *Lexer) Error(e string) {
+	log.Printf("%+v\n", errors.New(e))
 	panic(e)
 }
 
