@@ -34,8 +34,9 @@ type yySymType struct {
 
 const I = 57346
 const YOU = 57347
-const WORD = 57348
+const LOVE = 57348
 const ME = 57349
+const WORD = 57350
 
 var yyToknames = [...]string{
 	"$end",
@@ -43,8 +44,9 @@ var yyToknames = [...]string{
 	"$unk",
 	"I",
 	"YOU",
-	"WORD",
+	"LOVE",
 	"ME",
+	"WORD",
 }
 var yyStatenames = [...]string{}
 
@@ -52,7 +54,7 @@ const yyEofCode = 1
 const yyErrCode = 2
 const yyInitialStackSize = 16
 
-//line book.go.y:63
+//line book.go.y:70
 
 /* 規則部 ここまで */
 /*
@@ -78,8 +80,8 @@ func (l *Lexer) Lex(lval *yySymType) int {
 		token = I
 	case "YOU":
 		token = YOU
-	// case "LOVE":
-	// 	token = LOVE
+	case "LOVE":
+		token = LOVE
 	case "ME":
 		token = ME
 	// case "\n":
@@ -114,41 +116,41 @@ var yyExca = [...]int{
 	-2, 0,
 }
 
-const yyNprod = 5
+const yyNprod = 6
 const yyPrivate = 57344
 
 var yyTokenNames []string
 var yyStates []string
 
-const yyLast = 5
+const yyLast = 7
 
 var yyAct = [...]int{
 
-	3, 4, 5, 2, 1,
+	3, 4, 6, 7, 5, 2, 1,
 }
 var yyPact = [...]int{
 
-	-4, -1000, -1000, -1000, -1000, -1000,
+	-4, -1000, -3, -1000, -1000, -1000, -1000, -1000,
 }
 var yyPgo = [...]int{
 
-	0, 4, 3,
+	0, 6, 5, 2,
 }
 var yyR1 = [...]int{
 
-	0, 1, 2, 2, 2,
+	0, 1, 2, 2, 2, 3,
 }
 var yyR2 = [...]int{
 
-	0, 1, 1, 1, 1,
+	0, 2, 1, 1, 1, 1,
 }
 var yyChk = [...]int{
 
-	-1000, -1, -2, 4, 5, 6,
+	-1000, -1, -2, 4, 5, 8, -3, 6,
 }
 var yyDef = [...]int{
 
-	0, -2, 1, 2, 3, 4,
+	0, -2, 0, 2, 3, 4, 1, 5,
 }
 var yyTok1 = [...]int{
 
@@ -156,7 +158,7 @@ var yyTok1 = [...]int{
 }
 var yyTok2 = [...]int{
 
-	2, 3, 4, 5, 6, 7,
+	2, 3, 4, 5, 6, 7, 8,
 }
 var yyTok3 = [...]int{
 	0,
@@ -500,27 +502,35 @@ yydefault:
 	switch yynt {
 
 	case 1:
-		yyDollar = yyS[yypt-1 : yypt+1]
-		//line book.go.y:43
+		yyDollar = yyS[yypt-2 : yypt+1]
+		//line book.go.y:42
 		{
-			yyVAL.expr = yyDollar[1].expr
+			// $$ = fmt.Sprintf("%s %s", rune($1), rune($2))
+			yyVAL.expr = fmt.Sprintf("%#v %#v\n", yyDollar[1].expr, yyDollar[2].expr)
+			yyVAL.expr = fmt.Sprintf("%#v %#v\n", yyDollar[1].expr, yyDollar[2].expr)
 			yylex.(*Lexer).result = yyVAL.expr
 		}
 	case 2:
 		yyDollar = yyS[yypt-1 : yypt+1]
-		//line book.go.y:50
+		//line book.go.y:51
 		{
 			yyVAL.expr = yyDollar[1].token
 		}
 	case 3:
 		yyDollar = yyS[yypt-1 : yypt+1]
-		//line book.go.y:54
+		//line book.go.y:55
 		{
 			yyVAL.expr = yyDollar[1].token
 		}
 	case 4:
 		yyDollar = yyS[yypt-1 : yypt+1]
-		//line book.go.y:58
+		//line book.go.y:59
+		{
+			yyVAL.expr = yyDollar[1].token
+		}
+	case 5:
+		yyDollar = yyS[yypt-1 : yypt+1]
+		//line book.go.y:65
 		{
 			yyVAL.expr = yyDollar[1].token
 		}
