@@ -31,17 +31,18 @@ type WordExpr struct {
 
 %type<expr>  sent
 %type<expr> subject
-%token<token> I
-%token<token> YOU
+%type<expr> verb
+%token<token> I YOU LOVE ME
 %token<token> WORD
-%token<token> ME
 
 %%
 
 sent
-	: subject
+	: subject verb
   {
-      $$ = $1
+      // $$ = fmt.Sprintf("%s %s", rune($1), rune($2))
+      $$ = fmt.Sprintf("%#v %#v\n",$1, $2)
+			$$ = fmt.Sprintf("%#v %#v\n",$1, $2)
       yylex.(*Lexer).result = $$
   }
 
@@ -55,6 +56,12 @@ subject
     $$ = $1
   }
 	| WORD
+	{
+    $$ = $1
+  }
+
+verb
+	: LOVE
 	{
     $$ = $1
   }
@@ -85,8 +92,8 @@ func (l *Lexer) Lex(lval *yySymType) int {
 		token = I
 	case "YOU":
 		token = YOU
-		// case "LOVE":
-		// 	token = LOVE
+	case "LOVE":
+		token = LOVE
 	case "ME":
 		token = ME
 	// case "\n":
