@@ -54,7 +54,7 @@ const yyEofCode = 1
 const yyErrCode = 2
 const yyInitialStackSize = 16
 
-//line book.go.y:70
+//line book.go.y:86
 
 /* 規則部 ここまで */
 /*
@@ -116,41 +116,45 @@ var yyExca = [...]int{
 	-2, 0,
 }
 
-const yyNprod = 6
+const yyNprod = 9
 const yyPrivate = 57344
 
 var yyTokenNames []string
 var yyStates []string
 
-const yyLast = 7
+const yyLast = 11
 
 var yyAct = [...]int{
 
-	3, 4, 6, 7, 5, 2, 1,
+	9, 8, 10, 11, 3, 4, 6, 7, 5, 2,
+	1,
 }
 var yyPact = [...]int{
 
-	-4, -1000, -3, -1000, -1000, -1000, -1000, -1000,
+	0, -1000, 1, -1000, -1000, -1000, -5, -1000, -1000, -1000,
+	-1000, -1000,
 }
 var yyPgo = [...]int{
 
-	0, 6, 5, 2,
+	0, 10, 9, 6, 1,
 }
 var yyR1 = [...]int{
 
-	0, 1, 2, 2, 2, 3,
+	0, 1, 2, 2, 2, 3, 4, 4, 4,
 }
 var yyR2 = [...]int{
 
-	0, 2, 1, 1, 1, 1,
+	0, 3, 1, 1, 1, 1, 1, 1, 1,
 }
 var yyChk = [...]int{
 
-	-1000, -1, -2, 4, 5, 8, -3, 6,
+	-1000, -1, -2, 4, 5, 8, -3, 6, -4, 5,
+	7, 8,
 }
 var yyDef = [...]int{
 
-	0, -2, 0, 2, 3, 4, 1, 5,
+	0, -2, 0, 2, 3, 4, 0, 5, 1, 6,
+	7, 8,
 }
 var yyTok1 = [...]int{
 
@@ -502,35 +506,54 @@ yydefault:
 	switch yynt {
 
 	case 1:
-		yyDollar = yyS[yypt-2 : yypt+1]
-		//line book.go.y:42
+		yyDollar = yyS[yypt-3 : yypt+1]
+		//line book.go.y:43
 		{
-			// $$ = fmt.Sprintf("%s %s", rune($1), rune($2))
-			yyVAL.expr = fmt.Sprintf("%#v %#v\n", yyDollar[1].expr, yyDollar[2].expr)
-			yyVAL.expr = fmt.Sprintf("%#v %#v\n", yyDollar[1].expr, yyDollar[2].expr)
+			// $$ = fmt.Sprintf("%#v %#v\n",$1, $2)
+			yyVAL.expr = fmt.Sprintf("%#v %#v %#v\n", yyDollar[1].expr, yyDollar[2].expr, yyDollar[3].expr)
+			// $$ = []Token{$1, $2, $3}
+			// book.go.y:46[/Users/callistoiv/works/IdeaProjects/dotfiles/yacc/book.go:514]: cannot use yyDollar[1].expr (type Expression) as type Token in array or slice literal: need type assertion
 			yylex.(*Lexer).result = yyVAL.expr
 		}
 	case 2:
 		yyDollar = yyS[yypt-1 : yypt+1]
-		//line book.go.y:51
+		//line book.go.y:53
 		{
 			yyVAL.expr = yyDollar[1].token
 		}
 	case 3:
 		yyDollar = yyS[yypt-1 : yypt+1]
-		//line book.go.y:55
+		//line book.go.y:57
 		{
 			yyVAL.expr = yyDollar[1].token
 		}
 	case 4:
 		yyDollar = yyS[yypt-1 : yypt+1]
-		//line book.go.y:59
+		//line book.go.y:61
 		{
 			yyVAL.expr = yyDollar[1].token
 		}
 	case 5:
 		yyDollar = yyS[yypt-1 : yypt+1]
-		//line book.go.y:65
+		//line book.go.y:67
+		{
+			yyVAL.expr = yyDollar[1].token
+		}
+	case 6:
+		yyDollar = yyS[yypt-1 : yypt+1]
+		//line book.go.y:73
+		{
+			yyVAL.expr = yyDollar[1].token
+		}
+	case 7:
+		yyDollar = yyS[yypt-1 : yypt+1]
+		//line book.go.y:77
+		{
+			yyVAL.expr = yyDollar[1].token
+		}
+	case 8:
+		yyDollar = yyS[yypt-1 : yypt+1]
+		//line book.go.y:81
 		{
 			yyVAL.expr = yyDollar[1].token
 		}

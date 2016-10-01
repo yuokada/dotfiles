@@ -32,17 +32,19 @@ type WordExpr struct {
 %type<expr>  sent
 %type<expr> subject
 %type<expr> verb
+%type<expr> object
 %token<token> I YOU LOVE ME
 %token<token> WORD
 
 %%
 
 sent
-	: subject verb
+	: subject verb object
   {
-      // $$ = fmt.Sprintf("%s %s", rune($1), rune($2))
-      $$ = fmt.Sprintf("%#v %#v\n",$1, $2)
-			$$ = fmt.Sprintf("%#v %#v\n",$1, $2)
+      // $$ = fmt.Sprintf("%#v %#v\n",$1, $2)
+			$$ = fmt.Sprintf("%#v %#v %#v\n",$1, $2, $3)
+			// $$ = []Token{$1, $2, $3}
+			// book.go.y:46[/Users/callistoiv/works/IdeaProjects/dotfiles/yacc/book.go:514]: cannot use yyDollar[1].expr (type Expression) as type Token in array or slice literal: need type assertion
       yylex.(*Lexer).result = $$
   }
 
@@ -65,6 +67,20 @@ verb
 	{
     $$ = $1
   }
+
+object
+	  : YOU
+		{
+	    $$ = $1
+	  }
+		| ME
+		{
+	    $$ = $1
+	  }
+		| WORD
+		{
+	    $$ = $1
+	  }
 
 
 %%
