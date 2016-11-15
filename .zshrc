@@ -1,5 +1,6 @@
 export LANG=ja_JP.UTF-8
 export PROMPT="%m%# "
+#export PROMPT="%# "
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -103,7 +104,7 @@ case ${OSTYPE} in
         export GOROOT=/usr/local/opt/go/libexec
         export GOPATH=$HOME/go
         export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-        export PATH=/opt/local/bin:$PATH
+        export PATH=~/bin:/opt/local/bin:$PATH
         ;;
     linux*)
         #ここにLinux向けの設定
@@ -185,4 +186,3 @@ fi
 # #  caffe setting
 # export CAFFE_DIR=~/works/project/dotfiles/vagrant/caffe
 # export PYTHONPATH=$CAFFE_DIR/python
-
