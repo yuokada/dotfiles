@@ -13,9 +13,3 @@ emacs23/.emacs.d/url/
 
 # vagrant
 .vagrant
-vendor
-
-.vim/bundle/errormarker.vim
-.vim/.netrwhist.orig
-
-

@@ -115,71 +115,79 @@ augroup rbsyntaxcheck
     autocmd Bufwrite *.rb w ! ruby -c
 augroup END
 
-""" Vundle の設定  """
-"set nocompatible
-"let g:vundle_default_git_proto='git'
-"filetype off
+" """ Vundle の設定  """
+" "set nocompatible
+" "let g:vundle_default_git_proto='git'
+" "filetype off
+" "
+" "set rtp+=~/.vim/bundle/vundle
+" "call vundle#rc()
 "
-"set rtp+=~/.vim/bundle/vundle
-"call vundle#rc()
-
-set nocompatible
-filetype plugin indent off
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
-endif
-
-
-NeoBundle 'mattn/gist-vim'
-NeoBundle 'tsaleh/vim-align'
-NeoBundle 'gmarik/vundle'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'surround.vim'
-NeoBundle 'snipMate'
-NeoBundle 'Conque-Shell'
-NeoBundle 'SuperTab'
-"Bundle 'twitvim'
-NeoBundle 'AutoComplPop'
-NeoBundle 'python_fold'
-"NeoBundle 'unite.vim'
-"NeoBundle 'quickrun'
-NeoBundle 'thinca/vim-quickrun'
-"2012/02/16
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'Shougo/unite.vim'
-"2012/05/04
-NeoBundle 'taglist-plus'
-NeoBundle 'taglist.vim'
-"2012/09/20
-"NeoBundle 'errormarker.vim'
-"NeoBundle 'phpErrorMarker'
-NeoBundle 'ZenCoding.vim'
-NeoBundle 'Zen-Color-Scheme'
-NeoBundle 'repeat.vim'
-NeoBundle 'L9'
-NeoBundle 'project.tar.gz'
-"NeoBundle 'davidhalter/jedi-vim'
-"2012/02/02
-NeoBundle 'Solarized'
-NeoBundle 'rest.vim'
-NeoBundle 'Rykka/riv.vim'
-"2013/08/15
-NeoBundle 'Shougo/neosnippet'
-
-"2013/12/30
-NeoBundle 'renamer.vim'
-
-"NeoBundle 'MarcWeber/vim-addon-manager'
-NeoBundle 'h1mesuke/unite-outline'
-
-"NeoBundleInstall 'Blackrush/vim-gocode'
-
-
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'moll/vim-node'
-NeoBundle 'kchmck/vim-coffee-script'
+" set nocompatible
+" filetype plugin indent off
+"
+" if has('vim_starting')
+"   set runtimepath+=~/.vim/bundle/neobundle.vim/
+"   call neobundle#rc(expand('~/.vim/bundle/'))
+" endif
+"
+"
+" NeoBundle 'mattn/gist-vim'
+" NeoBundle 'tsaleh/vim-align'
+" NeoBundle 'gmarik/vundle'
+" NeoBundle 'Shougo/neocomplcache'
+" NeoBundle 'surround.vim'
+" NeoBundle 'snipMate'
+" NeoBundle 'Conque-Shell'
+" NeoBundle 'SuperTab'
+" "Bundle 'twitvim'
+" NeoBundle 'AutoComplPop'
+" NeoBundle 'python_fold'
+" "NeoBundle 'unite.vim'
+" "NeoBundle 'quickrun'
+" NeoBundle 'thinca/vim-quickrun'
+" "2012/02/16
+" NeoBundle 'thinca/vim-ref'
+" NeoBundle 'Shougo/unite.vim'
+" "2012/05/04
+" NeoBundle 'taglist-plus'
+" NeoBundle 'taglist.vim'
+" "2012/09/20
+" "NeoBundle 'errormarker.vim'
+" "NeoBundle 'phpErrorMarker'
+" NeoBundle 'ZenCoding.vim'
+" NeoBundle 'Zen-Color-Scheme'
+" NeoBundle 'repeat.vim'
+" NeoBundle 'L9'
+" NeoBundle 'project.tar.gz'
+" "NeoBundle 'davidhalter/jedi-vim'
+" "2012/02/02
+" NeoBundle 'Solarized'
+" NeoBundle 'rest.vim'
+" NeoBundle 'Rykka/riv.vim'
+" "2013/08/15
+" NeoBundle 'Shougo/neosnippet'
+"
+" "2013/12/30
+" NeoBundle 'renamer.vim'
+"
+" "NeoBundle 'MarcWeber/vim-addon-manager'
+" NeoBundle 'h1mesuke/unite-outline'
+"
+" "NeoBundleInstall 'Blackrush/vim-gocode'
+"
+"
+" NeoBundle 'pangloss/vim-javascript'
+" NeoBundle 'moll/vim-node'
+" NeoBundle 'kchmck/vim-coffee-script'
+"
+" "clojure
+" NeoBundle 'guns/vim-clojure-static'
+" NeoBundle 'kien/rainbow_parentheses.vim'
+" NeoBundle 'tpope/vim-fireplace'
+" NeoBundle 'tpope/vim-classpath'
+"
+"
 
 "clojure
 NeoBundle 'guns/vim-clojure-static'

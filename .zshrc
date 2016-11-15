@@ -1,5 +1,6 @@
 export LANG=ja_JP.UTF-8
 export PROMPT="%m%# "
+#export PROMPT="%# "
 HISTFILE=$HOME/.zsh-history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -91,19 +92,18 @@ case ${OSTYPE} in
     darwin*)
         #ここにMac向けの設定
         export PATH=$PATH:/usr/local/share/npm/bin/
-        #alias emacs='/opt/local/bin/emacs-23.4'
-        #alias emacs23='/opt/local/bin/emacs-23.4'
-        alias emacs='/usr/local/bin/emacs-24.3'
-        alias emacs23='/usr/local/bin/emacs-24.3'
-        alias emacsclient='/opt/local/bin/emacsclient'
-        alias emacs-comp="emacs23 -batch -f byte-compile"
-        alias emacs-kill="emacsclient -e '(kill-emacs)'"
+        # alias emacs='/opt/local/bin/emacs-23.4'
+        # alias emacs23='/opt/local/bin/emacs-23.4'
+        # alias emacs='/usr/local/bin/emacs-24.3'
+        # alias emacs23='/usr/local/bin/emacs-24.3'
+        # alias emacsclient='/opt/local/bin/emacsclient'
+        # alias emacs-comp="emacs23 -batch -f byte-compile"
+        # alias emacs-kill="emacsclient -e '(kill-emacs)'"
         alias ls="ls -G"
-        #export GOROOT=`go env /usr/local/Cellar/go/1.1.1`
         export GOROOT=/usr/local/opt/go/libexec
         export GOPATH=$HOME/go
         export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-        export PATH=/opt/local/bin:$PATH
+        export PATH=~/bin:/opt/local/bin:$PATH
         ;;
     linux*)
         #ここにLinux向けの設定
@@ -127,14 +127,12 @@ fi
 alias ctags="/usr/local/bin/ctags"
 export GISTY_DIR=/Users/callistoiv/works/git
 
-
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source /Users/callistoiv/.pythonbrew/etc/bashrc
 
 source `which virtualenvwrapper.sh`
 [[ -s /Users/callistoiv/.tmuxinator/scripts/tmuxinator ]] && source /Users/callistoiv/.tmuxinator/scripts/tmuxinator
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 
 ## peco
 function peco-select-history() {
@@ -175,6 +173,7 @@ compctl -K _pip_completion pip
 
 # tmux
 alias tmux="TERM=screen-256color tmux"
+# Docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/callistoiv/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
@@ -185,4 +184,3 @@ fi
 # #  caffe setting
 # export CAFFE_DIR=~/works/project/dotfiles/vagrant/caffe
 # export PYTHONPATH=$CAFFE_DIR/python
-
