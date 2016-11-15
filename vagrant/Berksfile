@@ -1,0 +1,6 @@
+# site :opscode
+source "https://supermarket.chef.io"
+
+cookbook 'mysql'
+cookbook 'nginx', '~> 0.101.5'
+cookbook 'golang', '~> 1.5.0'

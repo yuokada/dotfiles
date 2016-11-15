@@ -173,7 +173,6 @@ compctl -K _pip_completion pip
 
 # tmux
 alias tmux="TERM=screen-256color tmux"
-
 # Docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/callistoiv/.boot2docker/certs/boot2docker-vm

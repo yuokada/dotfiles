@@ -11,4 +11,5 @@ emacs23/.emacs.d/ac-comphist.dat
 emacs23/.emacs.d/undohist/
 emacs23/.emacs.d/url/
 
+# vagrant
 .vagrant
