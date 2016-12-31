@@ -189,11 +189,11 @@ augroup END
 "
 "
 
-"clojure
-NeoBundle 'guns/vim-clojure-static'
-NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'tpope/vim-fireplace'
-NeoBundle 'tpope/vim-classpath'
+" "clojure
+" NeoBundle 'guns/vim-clojure-static'
+" NeoBundle 'kien/rainbow_parentheses.vim'
+" NeoBundle 'tpope/vim-fireplace'
+" NeoBundle 'tpope/vim-classpath'
 
 
 
