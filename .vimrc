@@ -33,6 +33,9 @@ set tabstop=4       " numbers of spaces of tab character
 set textwidth=80
 set list
 set cursorline
+
+set helplang=ja,en
+
 hi CursorLine term=reverse cterm=reverse
 
 set iskeyword+=:
