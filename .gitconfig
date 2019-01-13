@@ -1,11 +1,8 @@
 [user]
 	name = yuokada
 	email = callistoiv+git@gmail.com
-
 [color]
 	ui = auto
-
-
 [github]
 	user = yuokada
 	token = dummy_token
@@ -13,6 +10,7 @@
 [core]
 	editor = vim
 	excludesfile = /Users/callistoiv/.gitignore_global
+	quotepath = false
 
 [alias]
 	br = branch
@@ -27,6 +25,9 @@
 	gp = grep -n # grepに行番号を付ける
 	lg = log --graph --pretty=oneline --decorate --date=short --abbrev-commit --branches
 	# ログをtreeで表示(簡易tig) via http://webtech-walker.com/archive/2010/03/04034601.html
+  df = diff -w
+  dfc = diff --check
+  fetch-pulls = fetch origin +refs/pull/*:refs/remotes/pull/*
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -39,3 +40,5 @@
 #path = ~/dotfiles/.gitconfig.local
 [push]
 	default = current
+[rebase]
+	autosquash = true
