@@ -115,26 +115,25 @@ case ${OSTYPE} in
         ;;
 esac
 
+autoload -Uz promptinit
+promptinit
+prompt paradox
 
-## rbenv
-#
-if [ -e /usr/local/bin/rbenv ]; then;
-    export PATH=~/.rbenv/shims:$PATH
-    #source "`brew --prefix rbenv`/completions/rbenv.zsh"
-fi
+# Customize to your needs...
+export PATH=$HOME/bin:$PATH
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="$HOME/.embulk/bin:$PATH"
+export PATH=$HOME/go/bin:$PATH
 
-
-alias ctags="/usr/local/bin/ctags"
-export GISTY_DIR=/Users/callistoiv/works/git
-
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source /Users/callistoiv/.pythonbrew/etc/bashrc
-
-source `which virtualenvwrapper.sh`
-[[ -s /Users/callistoiv/.tmuxinator/scripts/tmuxinator ]] && source /Users/callistoiv/.tmuxinator/scripts/tmuxinator
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+alias ga="git add"
+alias gc="git commit"
+alias gs="git status -sb"
+alias gd="git diff"
+alias gdc="git diff --cached"
 
 ## peco
+# see: http://qiita.com/kp_ohnishi/items/3009e2083831af3a7c5c
+# see: http://qiita.com/wada811/items/78b14181a4de0fd5b497
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -142,45 +141,17 @@ function peco-select-history() {
     else
         tac="tail -r"
     fi
-    BUFFER=$(history -n 1 | \
-        eval $tac | \
-        peco --query "$LBUFFER")
+    BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | peco --query "$LBUFFER")
     CURSOR=$#BUFFER
-    zle clear-screen
+    # zle clear-screen
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+source <(kubectl completion zsh)
 #
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
-
-# pip zsh completion start
-function _pip_completion {
-  local words cword
-  read -Ac words
-  read -cn cword
-  reply=( $( COMP_WORDS="$words[*]" \
-             COMP_CWORD=$(( cword-1 )) \
-             PIP_AUTO_COMPLETE=1 $words[1] ) )
-}
-compctl -K _pip_completion pip
-# pip zsh completion end
-
-# if [ -e /usr/local/share/zsh-completions ]; then
-#     fpath=(/usr/local/share/zsh-completions $fpath)
-#     fpath=(/usr/local/share/zsh/site-functions/_lein $fpath)
-#     export PATH=$PATH:/usr/local/opt/leiningen/bin/
-# fi
-
 # tmux
 alias tmux="TERM=screen-256color tmux"
-# Docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/callistoiv/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
 
 if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
-# #  caffe setting
-# export CAFFE_DIR=~/works/project/dotfiles/vagrant/caffe
-# export PYTHONPATH=$CAFFE_DIR/python
