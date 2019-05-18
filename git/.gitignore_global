@@ -4,3 +4,8 @@ tags
 *.egg
 .idea
 *.egg-info
+*.orig
+*.pyc
+vendor
+
+*.iml
