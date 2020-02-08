@@ -1,5 +1,5 @@
 [user]
-	name = yuokada
+	name = Yukihiro Okada
 	email = callistoiv+git@gmail.com
 [color]
 	ui = auto
@@ -9,12 +9,13 @@
 
 [core]
 	editor = vim
-	excludesfile = /Users/callistoiv/.gitignore_global
+ excludesfile = ~/.gitignore_global
 	quotepath = false
 
 [alias]
-	br = branch
-	ci = commit -v
+  b  = browse
+  br = branch
+  ci = commit -v
 	co = checkout # checkout長い…
 	st = status -sb # シンプルなstatus
 	pr = pull --rebase # pull するときにmergeコミットを作らない
