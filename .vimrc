@@ -47,6 +47,9 @@ inoremap "" ""<LEFT>
 inoremap '' ''<LEFT>
 inoremap <> <><LEFT>
 
+" for US KEYBOARD
+nnoremap ; :
+nnoremap : ;
 
 set encoding=utf-8
 set fencs=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932
@@ -107,8 +110,17 @@ let g:ref_alc_encoding = 'Shift-JIS' " 文字化けするならここで文字�
 
 " 保存時に行末の空白を除去する
 "autocmd BufWritePre * :%s/\s\+$//ge
-autocmd BufNewFile,BufRead *.md set filetype=markdown
-autocmd BufWritePre * if &filetype !=? 'markdown' | %s/ *$//ge | endif
+" autocmd BufNewFile,BufRead *.md set filetype=markdown
+" autocmd BufWritePre * if &filetype !=? 'markdown' | %s/ *$//ge | endif
+" https://stackoverflow.com/questions/356126/how-can-you-automatically-remove-trailing-whitespace-in-vim
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,php,ruby,python,yaml autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " 保存時にtabをスペースに変換する
 "autocmd BufWritePre * :%s/\t/ /ge
