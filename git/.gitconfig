@@ -1,6 +1,6 @@
 [user]
 	name = Yukihiro Okada
-	email = callistoiv+git@gmail.com
+	email = yuokada@users.noreply.github.com
 [color]
 	ui = auto
 [github]
@@ -8,7 +8,7 @@
 	token = dummy_token
 
 [core]
-	editor = vim
+	editor = code --wait
  excludesfile = ~/.gitignore_global
 	quotepath = false
 
@@ -29,6 +29,8 @@
   df = diff -w
   dfc = diff --check
   fetch-pulls = fetch origin +refs/pull/*:refs/remotes/pull/*
+  prl  = pr list
+  prco = pr checkout
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
