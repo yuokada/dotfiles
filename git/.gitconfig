@@ -1,16 +1,16 @@
 [user]
-	name = Yukihiro Okada
-	email = yuokada@users.noreply.github.com
+  name = Yukihiro Okada
+  email = yuokada@users.noreply.github.com
 [color]
-	ui = auto
+  ui = auto
 [github]
-	user = yuokada
-	token = dummy_token
+  user = yuokada
+  token = dummy_token
 
 [core]
-	editor = code --wait
+  editor = code --wait
  excludesfile = ~/.gitignore_global
-	quotepath = false
+  quotepath = false
 
 [alias]
   b  = browse
@@ -33,15 +33,15 @@
   prco = pr checkout
 
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 
 #[include]
 #path = ~/dotfiles/.gitconfig.local
 [push]
-	default = current
+  default = current
 [rebase]
-	autosquash = true
+  autosquash = true
