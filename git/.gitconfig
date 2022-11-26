@@ -9,8 +9,9 @@
 
 [core]
   editor = code --wait
- excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
   quotepath = false
+  autocrlf = input
 
 [alias]
   b  = browse
@@ -45,3 +46,7 @@
   default = current
 [rebase]
   autosquash = true
+[pull]
+  rebase = true
+[init]
+  defaultBranch = master
