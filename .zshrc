@@ -150,7 +150,6 @@ bindkey '^r' peco-select-history
 source <(kubectl completion zsh)
 #
 # tmux
-alias tmux="TERM=screen-256color tmux"
 
 if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
