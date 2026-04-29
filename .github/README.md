@@ -2,18 +2,18 @@
 
 ## Feature
 
-- [Issue and Pull Request templates](https://github.com/blog/2111-issue-and-pull-request-templates "Issue and Pull Request templates")
+- [Issue and Pull Request templates \- The GitHub Blog](https://github.blog/developer-skills/github/issue-and-pull-request-templates/)
 - [Creating an issue template for your repository - User Documentation](https://help.github.com/articles/creating-an-issue-template-for-your-repository/ "Creating an issue template for your repository - User Documentation")
-- [GitHubのIssue・PullRequestのテンプレート機能を試した - Qiita](http://qiita.com/nyamogera/items/3fe6985b45fbd5377184 "GitHubのIssue・PullRequestのテンプレート機能を試した - Qiita")
 
 ## Format
 
 - [pull request を利用した開発ワークフロー // Speaker Deck](https://speakerdeck.com/hotchpotch/pull-request-woli-yong-sitakai-fa-wakuhuro "pull request を利用した開発ワークフロー // Speaker Deck")
   古いけどこれをベースに。
-  - [クックパッドの開発プロセス](http://www.slideshare.net/inohiro/github-study "クックパッドの開発プロセス")
-  上よりも新しいスライド。
-  http://www.slideshare.net/inohiro/github-study/29
-  http://www.slideshare.net/inohiro/github-study/34
+  - [クックパッドの開発プロセス](http://www.slideshare.net/inohiro/github-study "クックパッドの開発プロセス") 上よりも新しいスライド。  
+  
+    - [P29 - クックパッドの開発プロセス \| PDF](https://www.slideshare.net/slideshow/github-study/49627175#29)
+    - [P34 - クックパッドの開発プロセス \| PDF](https://www.slideshare.net/slideshow/github-study/49627175#34)
+  
 - [github を用いた開発フロー テンプレート](http://pepabo.github.io/docs/github/workflow.html "github を用いた開発フロー テンプレート")
 - [pixiv_dev_flow_sezemi.md](https://gist.github.com/catatsuy/76cb8a83181739277c3b "pixiv_dev_flow_sezemi.md")
 - [僕のチームのGitの開発フロー - Mitsuyuki.Shiiba](http://bufferings.hatenablog.com/entry/2016/02/05/010138 "僕のチームのGitの開発フロー - Mitsuyuki.Shiiba")
@@ -21,7 +21,6 @@
   - [[wip]楽しく仕事をするために試行錯誤しているGitHubの使いかた ｜ Developers.IO][Developers_io_github_wip]
   - [開発フロー研修 @ Wantedly - Qiita][qiit_wantedly]
 - [複数のエンジニアと開発を円滑に進めるためのissueの立て方 - クックパッド開発者ブログ][cookpad_issue_story]
-- http://engineering.crocos.jp/post/98455177675/pull-request-%E3%81%AE%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88%E3%82%92%E6%B1%BA%E3%82%81%E3%82%8B%E3%81%A8%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E3%81%AE%E5%8A%B9%E7%8E%87%E3%81%8C3%E5%80%8D%E3%82%88%E3%81%8F%E3%81%AA%E3%82%8B
 
 ## 目的
 
