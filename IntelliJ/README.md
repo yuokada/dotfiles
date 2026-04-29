@@ -10,6 +10,10 @@
 % ls  ~/Library/Preferences/IntelliJIdea2017.1/codestyles
 ```
 
+## Themes
+
+- [jkaving/intellij\-colors\-solarized: Solarized Colorscheme for IntelliJ IDEA](https://github.com/jkaving/intellij-colors-solarized)
+
 ## Link
 
 ### Intellij とJava
