@@ -13,6 +13,7 @@
 ## Themes
 
 - [jkaving/intellij\-colors\-solarized: Solarized Colorscheme for IntelliJ IDEA](https://github.com/jkaving/intellij-colors-solarized)
+- [kenstuddy/idea\-one\-dark\-theme: One Dark theme for IntelliJ IDEA, PhpStorm, PyCharm, RubyMine, WebStorm\.](https://github.com/kenstuddy/idea-one-dark-theme)
 
 ## Link
 
