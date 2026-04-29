@@ -107,9 +107,6 @@ prompt paradox
 
 # Customize to your needs...
 export PATH=$HOME/bin:$PATH
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="$HOME/.embulk/bin:$PATH"
-export PATH=$HOME/go/bin:$PATH
 
 alias ga="git add"
 alias gc="git commit"
@@ -133,7 +130,7 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 #
 # tmux
 
