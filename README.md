@@ -30,3 +30,5 @@ From shell:
 ```bash
 ~/.tmux/plugins/tpm/bin/update_plugins all
 ```
+
+see also: [rothgar/awesome\-tmux: A list of awesome resources for tmux](https://github.com/rothgar/awesome-tmux)
