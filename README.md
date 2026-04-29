@@ -14,9 +14,15 @@ https://github.com/sorin-ionescu/prezto
 
 Requires tmux >= 3.2 (recommended: 3.6a+)
 
+- Prefix key in this repo: `C-b` (tmux default)
 - Plugin manager: `tpm`
 - Session restore: `tmux-resurrect` + `tmux-continuum`
 - `tmuxinator` configs were removed from this repository
+
+### Key bindings references
+
+- [tmux/tmux Wiki](https://github.com/tmux/tmux/wiki)
+- [tmux manual (key bindings)](https://man7.org/linux/man-pages/man1/tmux.1.html)
 
 ### Update tmux plugins
 
