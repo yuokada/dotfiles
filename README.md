@@ -21,8 +21,8 @@ Requires tmux >= 3.2 (recommended: 3.6a+)
 
 ### Key bindings references
 
-- tmux wiki: https://github.com/tmux/tmux/wiki
-- tmux manual (key bindings): https://man7.org/linux/man-pages/man1/tmux.1.html
+- [tmux/tmux Wiki](https://github.com/tmux/tmux/wiki)
+- [tmux manual (key bindings)](https://man7.org/linux/man-pages/man1/tmux.1.html)
 
 ### Update tmux plugins
 
