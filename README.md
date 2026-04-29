@@ -13,3 +13,20 @@ https://github.com/sorin-ionescu/prezto
 ## Tmux
 
 Requires tmux >= 3.2 (recommended: 3.6a+)
+
+- Plugin manager: `tpm`
+- Session restore: `tmux-resurrect` + `tmux-continuum`
+- `tmuxinator` configs were removed from this repository
+
+### Update tmux plugins
+
+Inside tmux:
+
+- `prefix + I`: install missing plugins
+- `prefix + U`: update installed plugins
+
+From shell:
+
+```bash
+~/.tmux/plugins/tpm/bin/update_plugins all
+```
