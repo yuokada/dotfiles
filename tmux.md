@@ -8,7 +8,7 @@
 
 ## セッション操作
 
-```
+```shell
 tmux new -s name      # 新規セッション
 tmux ls               # 一覧
 tmux attach -t name   # 再接続
@@ -22,7 +22,7 @@ tmux kill-session -t name
 
 ## ウィンドウ
 
-```
+```text
 Ctrl-b c   # 新規
 Ctrl-b n   # 次
 Ctrl-b p   # 前
@@ -37,7 +37,7 @@ Ctrl-b &   # 削除
 
 ## ペイン（分割）
 
-```
+```text
 Ctrl-b %   # 垂直分割
 Ctrl-b "   # 水平分割
 Ctrl-b ↑↓←→  # 移動
@@ -52,7 +52,7 @@ Ctrl-b x   # 閉じる
 
 ## コピー / スクロール
 
-```
+```text
 Ctrl-b [   # copy mode
 space      # 選択開始
 Enter      # コピー
@@ -66,7 +66,7 @@ q          # 終了
 
 ## よく使う最小セット（これだけ覚えればOK）
 
-```
+```text
 Ctrl-b c   # window作成
 Ctrl-b %   # 縦分割
 Ctrl-b "   # 横分割
@@ -79,10 +79,9 @@ tmux attach
 
 ## オンラインチートシート（見やすい）
 
-* [tmux cheatsheet.com](https://tmuxcheatsheet.com/?utm_source=chatgpt.com)
-* [Pluralsight cheat sheet](https://www.pluralsight.com/resources/blog/cloud/tmux-cheat-sheet?utm_source=chatgpt.com)
+* [tmux cheatsheet.com](https://tmuxcheatsheet.com/)
+* [Pluralsight cheat sheet](https://www.pluralsight.com/resources/blog/cloud/tmux-cheat-sheet)
 
-
-[1]: https://phoenixnap.com/kb/tmux-cheat-sheet?utm_source=chatgpt.com "tmux Cheat Sheet: Commands and Shortcuts Explained"
-[2]: https://tmuxcheatsheet.com/?utm_source=chatgpt.com "Tmux Cheat Sheet & Quick Reference | Session, window ..."
-[3]: https://www.pluralsight.com/resources/blog/cloud/tmux-cheat-sheet?utm_source=chatgpt.com "tmux Cheat Sheet | Session, Window & Pane Shortcuts"
+[1]: https://phoenixnap.com/kb/tmux-cheat-sheet "tmux Cheat Sheet: Commands and Shortcuts Explained"
+[2]: https://tmuxcheatsheet.com/ "Tmux Cheat Sheet & Quick Reference | Session, window ..."
+[3]: https://www.pluralsight.com/resources/blog/cloud/tmux-cheat-sheet "tmux Cheat Sheet | Session, Window & Pane Shortcuts"
