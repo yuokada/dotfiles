@@ -19,6 +19,11 @@ Requires tmux >= 3.2 (recommended: 3.6a+)
 - Session restore: `tmux-resurrect` + `tmux-continuum`
 - `tmuxinator` configs were removed from this repository
 
+### Cheat Sheet
+
+- [Tmux Cheat Sheet & Quick Reference \| Session, window, pane and more](https://tmuxcheatsheet.com/)
+- [tmux Cheat Sheet \| Session, Window & Pane Shortcuts \| Pluralsight](https://www.pluralsight.com/resources/blog/cloud/tmux-cheat-sheet)
+
 ### Key bindings references
 
 - [tmux/tmux Wiki](https://github.com/tmux/tmux/wiki)
