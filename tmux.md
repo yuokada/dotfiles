@@ -20,6 +20,23 @@ tmux kill-session -t name
 
 ---
 
+## セッション保存・復元
+
+```text
+Ctrl-b S   # 手動保存（tmux-resurrect）
+Ctrl-b R   # 復元（tmux-resurrect）
+```
+
+```text
+tmux-continuum:
+- 60分ごとに自動保存
+- 起動時に自動復元（有効化済み）
+```
+
+👉 この設定は `tmux-resurrect` + `tmux-continuum` 前提（導入は README 参照）
+
+---
+
 ## ウィンドウ
 
 ```text
@@ -81,6 +98,36 @@ tmux attach
 
 * [tmux cheatsheet.com](https://tmuxcheatsheet.com/)
 * [Pluralsight cheat sheet](https://www.pluralsight.com/resources/blog/cloud/tmux-cheat-sheet)
+
+---
+
+## FAQ（セッション保存・復元）
+
+### Q. 再起動後でも復元できる？
+
+はい。`@continuum-restore 'on'` が有効なら、再起動後に `tmux` 起動時に復元されます。
+手動復元は `Ctrl-b R` です。
+
+### Q. 複数セッションを保存できる？
+
+はい。tmux サーバー上の複数セッションをまとめて保存・復元できます。
+
+### Q. 保存済みセッション一覧はどう見る？
+
+```shell
+ls -1 ~/.tmux/resurrect/
+ls -lt ~/.tmux/resurrect/*.txt
+grep '^session' ~/.tmux/resurrect/last | awk '{print $2}'
+```
+
+### Q. 復元するセッションを指定できる？
+
+標準の `tmux-resurrect` では、保存状態全体の復元が基本です（セッション単位の選択復元は非対応）。
+
+実用上の回避策:
+
+1. 全体復元後に不要セッションを削除
+2. 復元前に `~/.tmux/resurrect/last`（または対象スナップショット）を編集して復元
 
 [1]: https://phoenixnap.com/kb/tmux-cheat-sheet "tmux Cheat Sheet: Commands and Shortcuts Explained"
 [2]: https://tmuxcheatsheet.com/ "Tmux Cheat Sheet & Quick Reference | Session, window ..."
