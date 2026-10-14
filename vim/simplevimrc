@@ -1,4 +1,5 @@
-" sudo  apt-get install vim   ctags vim-doc vim-scripts
+" Legacy reference configuration. The supported configuration is vim/.vimrc.
+" sudo apt-get install vim ctags vim-doc vim-scripts
 syntax on
 set title
 set showmatch
