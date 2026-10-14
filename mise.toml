@@ -7,6 +7,10 @@ java = "temurin-25"
 rust = "1.95"
 quarkus = "3.40"
 
+[tasks."brewfile:update"]
+description = "Regenerate homebrew/Brewfile from installed packages"
+run = "brew bundle dump --force --file=homebrew/Brewfile"
+
 [tasks.ci]
 description = "Verify every managed tool is available"
 run = '''

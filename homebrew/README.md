@@ -49,16 +49,16 @@ brew bundle remove --cask --file=homebrew/Brewfile wezterm
 
 ## スナップショットの再生成
 
-Brewfile は `brew bundle dump` で生成できます。現在のインストール状態と比較する場合は、
-Brewfile を直接上書きせず、一時ファイルへ出力します。生成結果には推移的依存関係や、
-一時的にインストールしたツールも含まれるため、差分から必要なトップレベルの項目だけを
-取り込みます。
+Brewfile は mise task から `brew bundle dump` を実行して再生成できます。
 
 ```shell
-snapshot="$(mktemp)"
-brew bundle dump --force --file="${snapshot}"
-diff -u homebrew/Brewfile "${snapshot}"
+mise run brewfile:update
+git diff -- homebrew/Brewfile
 ```
+
+この task は現在インストールされている formula、cask、tap、uv tool などを
+`homebrew/Brewfile` へ書き出します。推移的依存関係や一時的にインストールしたツールも
+含まれることがあるため、コミット前に差分を確認し、不要な項目を取り除いてください。
 
 不要なパッケージの候補は次のコマンドで確認できます。
 
