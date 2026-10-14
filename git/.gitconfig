@@ -3,10 +3,6 @@
   email = yuokada@users.noreply.github.com
 [color]
   ui = auto
-[github]
-  user = yuokada
-  token = dummy_token
-
 [core]
   editor = code --wait
   excludesfile = ~/.gitignore_global
@@ -30,9 +26,6 @@
   df = diff -w
   dfc = diff --check
   fetch-pulls = fetch origin +refs/pull/*:refs/remotes/pull/*
-  prl  = pr list
-  prco = pr checkout
-
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
@@ -44,9 +37,18 @@
 #path = ~/dotfiles/.gitconfig.local
 [push]
   default = current
+  autoSetupRemote = true
+[fetch]
+  prune = true
 [rebase]
   autosquash = true
+[rerere]
+  enabled = true
 [pull]
   rebase = true
 [init]
-  defaultBranch = master
+  defaultBranch = main
+[diff]
+  algorithm = histogram
+[merge]
+  conflictStyle = zdiff3
