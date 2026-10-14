@@ -8,4 +8,14 @@ rust = "1.95"
 quarkus = "3.40"
 
 [tasks.ci]
-run = "java --version"
+description = "Verify every managed tool is available"
+run = '''
+set -eu
+node --version
+aws --version
+python --version
+bun --version
+java --version
+rustc --version
+quarkus --version
+'''
