@@ -1,14 +1,39 @@
-#!/bin/bash -xe
+#!/usr/bin/env bash
 
-PWD="$(pwd)"
+set -euo pipefail
 
-#CMD="ls -l"
-#CMD="diff -uw"
-CMD="ln -s"
+repo_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+readonly repo_dir
 
-for F in .zshrc .gitignore_global
-do
-    $CMD "${PWD}/${F}" "${HOME}/${F}"
-    # ln -s ${PWD}/.zshrc ${HOME}/.zshrc
-    echo "$F Link Done"
+links=(
+  "zsh/.zshenv:.zshenv"
+  "zsh/.zshrc:.zshrc"
+  "zsh/.zpreztorc:.zpreztorc"
+  "git/.gitconfig:.gitconfig"
+  "git/.gitignore_global:.gitignore_global"
+  ".tmux.conf:.tmux.conf"
+  "vim/.vimrc:.vimrc"
+  "vim/.gvimrc:.gvimrc"
+)
+
+status=0
+for link in "${links[@]}"; do
+  source_path="${repo_dir}/${link%%:*}"
+  target_path="${HOME}/${link#*:}"
+
+  if [[ -L "${target_path}" && "$(readlink "${target_path}")" == "${source_path}" ]]; then
+    printf 'already linked: %s\n' "${target_path}"
+    continue
+  fi
+
+  if [[ -e "${target_path}" || -L "${target_path}" ]]; then
+    printf 'not replaced: %s already exists\n' "${target_path}" >&2
+    status=1
+    continue
+  fi
+
+  ln -s "${source_path}" "${target_path}"
+  printf 'linked: %s -> %s\n' "${target_path}" "${source_path}"
 done
+
+exit "${status}"

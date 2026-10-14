@@ -1,90 +1,60 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# Interactive Zsh configuration.
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# Homebrew completion directories differ between Apple Silicon and Intel Macs.
+if [[ -d /opt/homebrew/share/zsh/site-functions ]]; then
+  fpath=(/opt/homebrew/share/zsh/site-functions "${fpath[@]}")
+elif [[ -d /usr/local/share/zsh/site-functions ]]; then
+  fpath=(/usr/local/share/zsh/site-functions "${fpath[@]}")
 fi
-autoload -Uz promptinit
-promptinit
-# prompt paradox
-# prompt sorin
-prompt powerlevel10k
 
-# Customize to your needs...
-# Get the current operating system
-os_name=$(uname -s)
+# Prezto initializes completion and the configured prompt theme.
+if [[ -s "${ZDOTDIR:-${HOME}}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-${HOME}}/.zprezto/init.zsh"
+  if (( ${+functions[prompt_powerlevel10k_setup]} )); then
+    prompt powerlevel10k
+  fi
+else
+  autoload -Uz compinit
+  compinit
+fi
 
-# Common settings for all operating systems
+# mise replaces the former asdf initialization.
+if (( ${+commands[mise]} )); then
+  eval "$(mise activate zsh)"
+fi
 
-# OS-specific settings using case statement
-case $os_name in
-    Darwin)
-        # Add macOS-specific configurations here
-        # For asdf
-        export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-        # append completions to fpath
-        fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+if [[ -r "${HOME}/.iterm2_shell_integration.zsh" ]]; then
+  source "${HOME}/.iterm2_shell_integration.zsh"
+fi
 
-        test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-        ;;
-    Linux)
-        # Add Linux-specific configurations here
-        . "$HOME/.asdf/asdf.sh"
-        export PATH="$HOME/.asdf/bin:$PATH"
-        # append completions to fpath
-        fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
-        ;;
-    # FreeBSD)
-    #     # FreeBSD settings
-    #     # Add FreeBSD-specific configurations here
-    #     ;;
-    *)
-        # Default settings for other operating systems
-        # echo "Default settings for other OS"
-        # Add default configurations here
-        ;;
-esac
+HISTFILE="${ZDOTDIR:-${HOME}}/.zsh_history"
+HISTSIZE=1000000
+SAVEHIST=1000000
 
-export PATH=$HOME/bin:$PATH
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt share_history
 
-# see: https://unix.stackexchange.com/questions/273861/unlimited-history-in-zsh
-export HISTSIZE=10000000
-export SAVEHIST=10000000
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gp='git pull --rebase'
+alias gs='git status -sb'
 
-alias ga="git add"
-alias gp="git pull"
-alias gc="git commit"
-alias gs="git status -sb"
-alias gd="git diff"
-alias gdc="git diff --cached"
+peco-select-history() {
+  (( ${+commands[peco]} )) || return 1
 
-## peco
-# see: http://qiita.com/kp_ohnishi/items/3009e2083831af3a7c5c
-# see: http://qiita.com/wada811/items/78b14181a4de0fd5b497
-function peco-select-history() {
-    local tac
-    if which tac > /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-    BUFFER=$(history -n 1 | eval $tac | awk '!a[$0]++' | peco --query "$LBUFFER")
-    CURSOR=$#BUFFER
-    # zle clear-screen
+  local selected
+  selected="$(fc -rl 1 | sed 's/^[[:space:]]*[0-9]*[[:space:]]*//' | awk '!seen[$0]++' | peco --query "${LBUFFER}")"
+  [[ -n "${selected}" ]] || return 0
+
+  BUFFER="${selected}"
+  CURSOR=${#BUFFER}
 }
+
 zle -N peco-select-history
-bindkey '^r' peco-select-history
-# source <(kubectl completion zsh)
-# source <(minikube completion zsh)
-
-if [ -e /usr/local/share/zsh-completions ]; then
-    fpath=(/usr/local/share/zsh-completions $fpath)
-fi
-
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
+bindkey '^R' peco-select-history

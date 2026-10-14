@@ -1,11 +1,8 @@
-#
-# Defines environment variables.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
-# Ensure that a non-login, non-interactive shell has a defined environment.
-if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprofile"
-fi
+# Keep PATH setup available to login, interactive, and non-interactive shells.
+typeset -U path PATH
+path=(
+  "${HOME}/bin"
+  "${HOME}/.local/bin"
+  "${HOME}/.local/share/mise/shims"
+  "${path[@]}"
+)
