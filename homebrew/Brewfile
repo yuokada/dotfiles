@@ -1,35 +1,47 @@
-tap "codecrafters-io/tap"
-tap "quarkusio/tap"
+# Language runtimes and Quarkus are managed by ../mise.toml.
+
+# Bootstrap
 brew "mise"
+
+# Build and documentation tools
 brew "automake"
+brew "docutils"
+brew "graphviz"
+brew "maven"
+
+# Command-line utilities
 brew "coreutils"
 brew "curl"
-brew "docutils"
 brew "fd"
 brew "gawk"
+brew "grep"
+brew "guile"
+brew "jq"
+brew "peco"
+brew "tokei"
+brew "tree"
+brew "wget"
+
+# Git and GitHub
 brew "gh"
 brew "ghq"
 brew "git"
 brew "gnupg"
-brew "graphviz"
-brew "grep"
-brew "guile"
-brew "jq"
-brew "maven"
+brew "tig"
+
+# Network and data clients
 brew "mosh"
 brew "mysql-client"
 brew "nmap"
-brew "openjdk@17"
 brew "openldap"
-brew "peco"
+
+# Shell tooling
 brew "shellcheck"
 brew "tcl-tk"
-brew "tig"
 brew "tmux"
-brew "tokei"
-brew "tree"
-brew "wget"
 brew "zsh"
 brew "zsh-completions"
+
+# Third-party tools
+tap "codecrafters-io/tap", trusted: true
 brew "codecrafters-io/tap/codecrafters"
-brew "quarkusio/tap/quarkus"

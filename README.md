@@ -37,7 +37,7 @@ Prezto がなくても Zsh の補完、履歴、mise は利用できます。
 - `git/`: Git 設定とグローバル ignore
 - `vim/`: プラグインに依存しない Vim 設定
 - `.tmux.conf`: tmux 3.6a 以降向け設定
-- `homebrew/`: Apple Silicon 用と旧 Intel Mac 用の Brewfile
+- `homebrew/`: macOS 共通の Brewfile と更新手順
 - `mise.toml`: CLI とランタイムのバージョン
 - `old/`: 参照用に残した旧設定（インストール対象外）
 
