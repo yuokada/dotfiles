@@ -24,6 +24,6 @@ jobs:
         with:
           persist-credentials: false
       - name: Install tools
-        uses: jdx/mise-action@v5.1.2
+        uses: jdx/mise-action@v5.2.2
       - name: Verify toolchain
         run: mise run ci
